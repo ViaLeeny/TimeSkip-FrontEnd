@@ -8,11 +8,19 @@ import { signin } from "../Services/api"
 
 class SignUpForm extends React.Component {
 
-state = {
-    username: "", 
-    password: ""
-}
-
+    state = {
+        name: "", 
+        password: ""
+    }
+    
+    
+    
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    
     handleSubmit = () => {
         signin(this.state.username, this.state.password).then(data => {
         if (data.error) {
@@ -26,21 +34,23 @@ state = {
     signUp
 
     render(){
+    const {name, password} = this.state
+    const {handleChange} = this
     return (
     <div className="App">
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>TimeSkip</h1>
+        <h1>Create your TimeSkip Account</h1>
         <div>
 
     <Form>
-        <label>Username</label>
+        <label>Name</label>
         <Form.Field>
-        <input placeholder='Username' />
+        <input name="name" placeholder='Name' value={name} placeholder='Name' onChange={handleChange} />
         </Form.Field>
         <label>Password</label>
         <Form.Field>
-        <input placeholder='Password' />
+        <input name="password" placeholder='Password' value={password} placeholder='Password' onChange={handleChange} />
         </Form.Field>
         <Form.Field>
         </Form.Field>

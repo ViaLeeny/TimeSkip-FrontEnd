@@ -9,47 +9,59 @@ import { signin } from "../Services/api"
 class SignInForm extends React.Component {
 
 state = {
-    username: "", 
+    name: "", 
     password: ""
 }
 
-    handleSubmit = () => {
-        signin(this.state.username, this.state.password).then(data => {
+
+
+handleChange = (event) => {
+    this.setState({
+        [event.target.name]: event.target.value
+    })
+}
+
+
+handleSubmit = () => {
+    signin(this.state.name, this.state.password)
+    .then(data => {
         if (data.error) {
             alert(data.error);
         } else {
-            this.props.signin(data.username);
+            this.props.signIn(data.name);
         }
-        });
-    };
+    });
+};
 
     signUp
 
     render(){
+    const {name, password} = this.state
+    const {handleChange, handleSubmit} = this
     return (
     <div className="App">
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>TimeSkip</h1>
+        <h1>Sign In To TimeSkip</h1>
         <div>
 
     <Form>
         <label>Username</label>
         <Form.Field>
-        <input placeholder='Username' />
+        <input name="name" value={name} placeholder='Username' onChange={handleChange}/>
         </Form.Field>
         <label>Password</label>
         <Form.Field>
-        <input placeholder='Password' />
+        <input name="password" value={password} placeholder='Password' onChange={handleChange}/>
         </Form.Field>
         <Form.Field>
         </Form.Field>
         <br />
-        <button class="ui primary button">Submit</button>
+        <Link to='/Topics' class="ui primary button" onClick={handleSubmit} >Submit</Link>
+        {/* <button class="ui primary button" onClick={handleSubmit}>Submit</button> */}
     </Form>
 
         </div>
-
         </header>
         
 

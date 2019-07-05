@@ -3,25 +3,46 @@ import './App.css';
 import HomePage from './Pages/HomePage'
 import SignInForm from './Pages/SignInForm'
 import SignUpForm from './Pages/SignUpForm'
-import { Route } from 'react-router-dom'
+import Topics from './Pages/Topics'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 
 class App extends React.Component {
 
+  state = {
+      name: ""
+  }
+
+  signIn = name => {
+      this.setState({name})
+ 
+  }
+
+  signOut = () => {
+      this.setState({name: ""})
+  }
+
+
+
 
   render (){
+    const { name } = this.state
+    const { signIn, signOut } = this
+
     return(
       <div className="App">
-       <Route exact path="/" component={props => <HomePage {...props} />}/>
-       <Route path="/signin" component={props => <SignInForm {...props} />}/>
-       <Route path="/signup" component={props => <SignUpForm {...props} />}/>
-
+       <Switch>
+        <Route exact path="/" component={props => <HomePage {...props} />}/>
+        <Route path="/signin" component={props => <SignInForm signIn={signIn} {...props} />}/>
+        <Route path="/signup" component={props => <SignUpForm {...props} />}/>
+        <Route path="/topics" component={props => <Topics signOut={signOut} name= {name} {...props} />}/>
+       </Switch>
       </div>
     )
   }
 }
 
-export default App;
+export default withRouter(App);
 
 /* DEFAULT JS FROM CREATE REACT APP*/
 /* <img src={logo} className="App-logo" alt="logo" />
