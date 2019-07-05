@@ -9,7 +9,7 @@ import { signin } from "../Services/api"
 class HomePage extends React.Component {
 
 state = {
-    username: "", 
+    username: " ", 
     password: ""
 }
 
