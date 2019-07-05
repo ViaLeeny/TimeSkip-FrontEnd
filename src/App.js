@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
 import HomePage from './Pages/HomePage'
+import SignInForm from './Pages/SignInForm'
+import SignUpForm from './Pages/SignUpForm'
 import { Route } from 'react-router-dom'
 
 
 class App extends React.Component {
 
-  
 
   render (){
     return(
       <div className="App">
-       <HomePage />
+       <Route exact path="/" component={props => <HomePage {...props} />}/>
+       <Route path="/signin" component={props => <SignInForm {...props} />}/>
+       <Route path="/signup" component={props => <SignUpForm {...props} />}/>
+
       </div>
     )
   }
