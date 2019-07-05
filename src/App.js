@@ -1,13 +1,21 @@
 import React from 'react';
+import ContributionContainer from './ContributionContainer.js'
 // import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+
+
   return (
     // Ross Test
     <div className="App">
       <header className="App-header">
-       <h1>TimeSkip</h1>
+
+       <p>TimeSkip</p>
+       <ContributionContainer />
+
+
       </header>
     </div>
   );
