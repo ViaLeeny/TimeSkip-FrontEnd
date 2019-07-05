@@ -1,28 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HomePage from './Pages/HomePage'
+import { Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-       <h1>TimeSkip</h1>
-       <div>
-        <button class="ui primary button">Sign In</button>
-        <button class="ui secondary button">Sign Up</button>
+
+class App extends React.Component {
+
+  
+
+  render (){
+    return(
+      <div className="App">
+       <HomePage />
       </div>
-{/* 
-      <Switch>
-        <Route exact path='/' component={HomePage}/>
-        <Route path='/Signin' component={HomePage}/>
-        <Route path='/Topics' component={HomePage}/>
-        <Route component={() => <h1>Page Not Found</h1>}/>
-      </Switch> */}
-
-      </header>
-    </div>
-  );
+    )
+  }
 }
 
 export default App;
