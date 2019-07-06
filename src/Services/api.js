@@ -1,6 +1,8 @@
 const baseUrl = "http://localhost:3001";
 const signinUrl = baseUrl + "/signin";
 
+
+//FETCH USER
 export function signin(name, password) {
   return fetch(signinUrl, {
     method: "POST",

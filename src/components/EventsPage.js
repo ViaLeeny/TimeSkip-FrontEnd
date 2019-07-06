@@ -1,7 +1,8 @@
 import React from 'react'
 import TimelineContainer from './Timeline/TimelineContainer.js'
 
-const eventsURL = "http://localhost:3000/events"
+
+const eventsURL = "http://localhost:3001/events"
 
 class EventsPage extends React.Component {
 	state = {

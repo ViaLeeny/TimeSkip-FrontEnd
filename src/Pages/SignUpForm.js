@@ -8,19 +8,21 @@ import { signin } from "../Services/api"
 
 class SignUpForm extends React.Component {
 
+    //STATE FOR USER LOGIN DETAILS TYPED IN FORM
     state = {
         name: "", 
         password: ""
     }
     
     
-    
+    //CHANGE STATE AS USER TYPES
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
     
+    //SUBMIT USERNAME AND PASSWORD FOR USER CREATION
     handleSubmit = () => {
         signin(this.state.username, this.state.password).then(data => {
         if (data.error) {
@@ -31,8 +33,7 @@ class SignUpForm extends React.Component {
         });
     };
 
-    signUp
-
+    //USER SIGNUP FORM
     render(){
     const {name, password} = this.state
     const {handleChange} = this

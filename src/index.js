@@ -7,6 +7,8 @@ import 'semantic-ui-css/semantic.min.css'
 import { Button, Form } from 'semantic-ui-react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+
+//WRAPPED APP IN ROUTER
 ReactDOM.render(
 <Router> 
 <App />
