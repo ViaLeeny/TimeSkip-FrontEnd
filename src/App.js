@@ -24,9 +24,14 @@ class App extends React.Component {
   }
 
   //SIGN OUT FUNCTION
-
   signOut = () => {
       this.setState({name: ""})
+  }
+
+  //SIGN UP FUNCTION
+    signUp = () => {
+      this.setState({name: ""})
+      this.props.history.push('./topics')
   }
 
   //RENDER THE USER WELCOME SCREEN
@@ -40,7 +45,7 @@ class App extends React.Component {
        <Switch>
         <Route exact path="/" component={props => <HomePage {...props} />}/>
         <Route path="/signin" component={props => <SignInForm signIn={signIn} {...props} />}/>
-        <Route path="/signup" component={props => <SignUpForm {...props} />}/>
+        <Route path="/signup" component={props => <SignUpForm signIn={signIn} {...props} />}/>
         <Route path="/topics" component={props => <Topics signOut={signOut} name= {name} {...props} />}/>
         <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
        </Switch>

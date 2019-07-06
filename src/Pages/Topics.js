@@ -15,13 +15,12 @@ class Topics extends React.Component {
     <div className="App">
         <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>
             {
                 this.props.name.length > 0 
-                ? `Which topic would you like to choose from ${this.props.name}?`
+                ? <h1>`Which topic would you like to choose from ${this.props.name}?`</h1>
                 : <Link to='/' class="ui primary button"  >Please Sign In </Link>
             } 
-        </h1>
+   
             {
                 this.props.name.length > 0
             //     ? <Button onClick={this.props.signout} variant="contained" color="primary">
@@ -31,34 +30,38 @@ class Topics extends React.Component {
                 : null
             }
             
-        <div class="topic-container">
-        <Link to='/Space-Timeline' >
-
-        <Card>
-            <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
-            <Card.Content>
-            <Card.Header>Space</Card.Header>
-            <Card.Description>
-                A brief history of space exploration.
-            </Card.Description>
-            </Card.Content>
-        </Card>
-        </Link>
-
-        <Card>
-            <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
-            <Card.Content>
-            <Card.Header>Matthew</Card.Header>
-            <Card.Meta>
-                <span className='date'>Joined in 2015</span>
-            </Card.Meta>
-            <Card.Description>
-                Matthew is a musician living in Nashville.
-            </Card.Description>
-            </Card.Content>
-        </Card>
-   
-        </div>
+            {
+                this.props.name.length > 0 
+                ?         
+                <div class="topic-container">
+                <Link to='/TimeLine'  >
+        
+                <Card>
+                    <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
+                    <Card.Content>
+                    <Card.Header>Space</Card.Header>
+                    <Card.Description>
+                        A brief history of space exploration.
+                    </Card.Description>
+                    </Card.Content>
+                </Card>
+                </Link>
+        
+                <Card>
+                    <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
+                    <Card.Content>
+                    <Card.Header>Matthew</Card.Header>
+                    <Card.Meta>
+                        <span className='date'>Joined in 2015</span>
+                    </Card.Meta>
+                    <Card.Description>
+                        Matthew is a musician living in Nashville.
+                    </Card.Description>
+                    </Card.Content>
+                </Card>
+                </div>
+                : null 
+            }
         </header>
       {/* <EventsPage />
       <ContributionContainer /> */}
