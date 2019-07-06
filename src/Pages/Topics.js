@@ -2,8 +2,10 @@ import React from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import {Link } from 'react-router-dom'
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Card, Divider, Image, Placeholder, Form, Icon } from 'semantic-ui-react'
 import { signin } from "../Services/api"
+import ContributionContainer from '../ContributionContainer.js'
+import EventsPage from '../components/EventsPage'
 
 
 class Topics extends React.Component {
@@ -19,18 +21,47 @@ class Topics extends React.Component {
                 ? `Which topic would you like to choose from ${this.props.name}?`
                 : <Link to='/' class="ui primary button"  >Please Sign In </Link>
             } 
+        </h1>
             {
                 this.props.name.length > 0
             //     ? <Button onClick={this.props.signout} variant="contained" color="primary">
             //     SIGN OUT
             //   </Button>
-                ? <Link to='/' class="ui primary button" >Sign Out </Link>
+                ? <Link to='/' onClick={this.props.signout} class="ui primary button" >Sign Out </Link>
                 : null
             }
-        </h1>
-        </header>
-        
+            
+        <div class="topic-container">
+        <Link to='/Space-Timeline' >
 
+        <Card>
+            <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
+            <Card.Content>
+            <Card.Header>Space</Card.Header>
+            <Card.Description>
+                A brief history of space exploration.
+            </Card.Description>
+            </Card.Content>
+        </Card>
+        </Link>
+
+        <Card>
+            <Image src='https://www.history.org.uk/library/1308/0000/0082/moon_landing_640.jpg' wrapped ui={false} />
+            <Card.Content>
+            <Card.Header>Matthew</Card.Header>
+            <Card.Meta>
+                <span className='date'>Joined in 2015</span>
+            </Card.Meta>
+            <Card.Description>
+                Matthew is a musician living in Nashville.
+            </Card.Description>
+            </Card.Content>
+        </Card>
+   
+        </div>
+        </header>
+      {/* <EventsPage />
+      <ContributionContainer /> */}
     </div>
     );}
 }

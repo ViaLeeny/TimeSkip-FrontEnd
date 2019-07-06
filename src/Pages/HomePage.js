@@ -8,7 +8,7 @@ import { signin } from "../Services/api"
 
 class HomePage extends React.Component {
 
-
+    //USER WELCOME SCREEN WITH LOGIN AND SIGNUP BUTTONS
     render(){
     return (
     <div className="App">
