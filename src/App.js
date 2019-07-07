@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { Component } from "react";
 import ContributionContainer from './ContributionContainer.js'
-// import logo from './logo.svg';
 import './App.css';
+import { Container, Header, List } from "semantic-ui-react";
+const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 
-function App() {
+// import logo from './logo.svg';
 
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contributions: []
+    };
+  }
 
+  componentDidMount() {
+    fetch(CONTRIBUTIONS_URL)
+      .then(resp => resp.json())
+      .then(contributions => {
+        console.log(contributions)
+        this.setState({ contributions: contributions });
+      });
+  }
 
+render(){
   return (
     // Ross Test
     <div className="App">
       <header className="App-header">
 
-       <p>TimeSkip</p>
-       <ContributionContainer />
-
-
       </header>
+      <p>TimeSkip</p>
+       <ContributionContainer contributions={this.state.contributions} />
+
+     
     </div>
   );
+}
 }
 
 export default App;
