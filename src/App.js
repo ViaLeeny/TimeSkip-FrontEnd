@@ -5,9 +5,9 @@ import HomePage from './Pages/HomePage'
 import SignInForm from './Pages/SignInForm'
 import SignUpForm from './Pages/SignUpForm'
 import TopicsPage from './Pages/TopicsPage'
-import TimelineContainer from './components/Timeline/TimelineContainer'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import EventsPage from './components/EventsPage';
+import EventsPage_Gaming from './components_Gaming/EventsPage_Gaming';
 
 
 const topicsURL = "http://localhost:3001/topics"
@@ -58,6 +58,7 @@ class App extends React.Component {
         <Route path="/signup" component={props => <SignUpForm signIn={signIn} {...props} />}/>
         <Route path="/topics" component={props => <TopicsPage signOut={signOut} topics={topics}name= {name} {...props} />}/>
         <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
+        <Route path="/gaming-Timeline" component={props => <EventsPage_Gaming name= {name} {...props} />}/>
        </Switch>
       </div>
 
