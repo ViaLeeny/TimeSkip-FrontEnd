@@ -3,7 +3,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import {Link } from 'react-router-dom'
 import { Button, Form } from 'semantic-ui-react'
-import { signin } from "../Services/api"
+import { signup } from "../Services/api"
 
 
 class SignUpForm extends React.Component {
@@ -24,19 +24,17 @@ class SignUpForm extends React.Component {
     
     //SUBMIT USERNAME AND PASSWORD FOR USER CREATION
     handleSubmit = () => {
-        signin(this.state.username, this.state.password).then(data => {
-        if (data.error) {
-            alert(data.error);
-        } else {
-            this.props.signin(data.username);
+        signup(this.state.name, this.state.password)
+        .then(data => {
+          this.props.signIn(data.name);
         }
-        });
+        );
     };
 
     //USER SIGNUP FORM
     render(){
     const {name, password} = this.state
-    const {handleChange} = this
+    const {handleChange, handleSubmit} = this
     return (
     <div className="App">
         <header className="App-header">
@@ -56,7 +54,7 @@ class SignUpForm extends React.Component {
         <Form.Field>
         </Form.Field>
         <br />
-        <button class="ui primary button">Submit</button>
+        <button class="ui primary button" onClick={handleSubmit} >Submit</button>
     </Form>
 
         </div>
