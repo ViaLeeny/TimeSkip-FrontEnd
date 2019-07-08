@@ -7,40 +7,31 @@ class ContributionContainer extends Component {
     super(props);
     this.state = {};
   }
-  
-  selectedEventsContributions = () => {
-    
-    console.log("event id")
-    console.log(this.props.event.id)
 
-    console.log("all contributions")
-    console.log(this.props.contributions)
-  }
+  // componentDidMount() {
+  //   const filteredEventContributions = () => {
+  //     console.log("here are all contributions");
+  //     console.log(this.props.contributions);
+
+  //     let eventContributions = this.props.contributions.map(
+  //       contribution => contribution.event_id === this.props.event.id
+  //     );
+  //     //debugger;
+
+  //     this.setState({ filteredContributions: eventContributions });
+  //   };
+  // }
 
   render() {
     return (
       <div className="contribution">
-        <h3>contribution Display:</h3>
-        {/* <img src={ this.props.contributions[0].url}/>
-        <p> {this.props.contributions[0].text }</p> */}
+        <h3>Contribution Container:</h3>
+
         <p>
-          {this.props.contributions.length > 0 ? (
-            <ContributionCard
-              selectedEventsContributions={this.selectedEventsContributions()}
-            />
-          ) : (
-            "no contributions yet!"
-          )}
+          {this.props.contributions.map(cont => {
+            return <ContributionCard contribution={cont} />;
+          })}
         </p>
-        {/* <p>{this.props.contributions[0].text}</p> */}
-        <img
-          src={
-            this.props.contributions.length > 0
-              ? this.props.contributions[0].url
-              : "no contributions yet!"
-          }
-          width="100"
-        />
       </div>
     );
   }

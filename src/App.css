@@ -200,3 +200,52 @@ label {
   background-repeat: repeat;
 
 }
+
+.comment {
+  background:lightskyblue;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  border-radius: 50pc;
+}
+
+.comment:hover {
+  background:#fff;
+  color:lightskyblue;
+  border-radius: 50pc;
+
+}
+
+.comment:before, .comment:after {
+  border-radius: 50pc;
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: lightskyblue;
+  transition:400ms ease all;
+
+}
+
+.comment:after{
+  border-radius: 50pc;
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+
+}
+.comment:hover:before,.comment:hover:after{
+  border-radius: 50pc;
+  width:100%;
+  transition:800ms ease all;
+
+}
