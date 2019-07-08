@@ -10,16 +10,16 @@ import EventsPage from './components/EventsPage';
 import EventsPage_Gaming from './components_Gaming/EventsPage_Gaming';
 
 
-const topicsURL = "http://localhost:3001/topics"
+const topicsURL = "http://localhost:3000/topics"
 
 class App extends React.Component {
 
   //STATE FOR USER WHO IS LOGGED IN
   state = {
       name: "",
-      topics: [], 
+      topics: [],
       events: []
-  } 
+  }
 
 	componentDidMount() {
 		fetch(topicsURL)
@@ -30,7 +30,7 @@ class App extends React.Component {
   //SIGN IN FUNCTION
   signIn = name => {
       this.setState({name})
- 
+
   }
 
   //SIGN OUT FUNCTION
@@ -57,8 +57,12 @@ class App extends React.Component {
         <Route path="/signin" component={props => <SignInForm signIn={signIn} {...props} />}/>
         <Route path="/signup" component={props => <SignUpForm signIn={signIn} {...props} />}/>
         <Route path="/topics" component={props => <TopicsPage signOut={signOut} topics={topics}name= {name} {...props} />}/>
-        <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
+
+        <Route path="/Space-Timeline" component={props => <EventsPage  name= {name} {...props} />}/>
+
+        
         <Route path="/gaming-Timeline" component={props => <EventsPage_Gaming name= {name} {...props} />}/>
+
 
        </Switch>
       </div>
