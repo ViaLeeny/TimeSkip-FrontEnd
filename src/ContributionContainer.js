@@ -25,7 +25,7 @@ class ContributionContainer extends Component {
   render() {
     return (
       <div className="contribution">
-        <h3>Contribution Container:</h3>
+        <h1>Comments: </h1>
 
         <p>
           {this.props.contributions.map(cont => {
