@@ -1,22 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
+import { Card, Icon, Image } from 'semantic-ui-react'
 
-const CONTRIBUTIONS_URL = `http://localhost:3001/contributions/`;
-
-class ContributionContainer extends React.Component {
+class ContributionContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      contributions: []
-    };
-  }
-
-  componentDidMount() {
-    fetch(CONTRIBUTIONS_URL)
-      .then(resp => resp.json())
-      .then(contributions => {
-        //console.log(contributions)
-        this.setState({ contributions: contributions });
-      });
+    this.state = {};
   }
 
   // componentDidMount() {
@@ -31,12 +19,51 @@ class ContributionContainer extends React.Component {
   render() {
     return (
       <div className="contribution">
-        <h3>Here's your contribution:</h3>
-        <img src={this.state.contributions.length > 0 ? this.state.contributions[0].url : "No Contributions"}/>
-        <p> {this.state.contributions.length > 0 ? this.state.contributions[0].text : "No Contributions"}</p>
+        <h3>contribution Display:</h3>
+
+        {/* <img src={ this.props.contributions[0].url}/>
+        <p> {this.props.contributions[0].text }</p> */}
+        
+        <p>
+          {this.props.contributions.length > 0
+            ? this.props.contributions[0].text
+            : "no contributions yet!"}
+        </p>
+        {/* <p>{this.props.contributions[0].text}</p> */}
+        <img
+          src={
+            this.props.contributions.length > 0
+              ? this.props.contributions[0].url
+              : "no contributions yet!"
+          }
+          width="100"
+        />
+        
+        
       </div>
     );
   }
 }
 
 export default ContributionContainer;
+
+// CardExampleCard = () => (
+//   <Card>
+//     <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
+//     <Card.Content>
+//       <Card.Header>Matthew</Card.Header>
+//       <Card.Meta>
+//         <span className='date'>Joined in 2015</span>
+//       </Card.Meta>
+//       <Card.Description>
+//         Matthew is a musician living in Nashville.
+//       </Card.Description>
+//     </Card.Content>
+//     <Card.Content extra>
+//       <a>
+//         <Icon name='user' />
+//         22 Friends
+//       </a>
+//     </Card.Content>
+//   </Card>
+// )
