@@ -59,6 +59,7 @@ class App extends React.Component {
         <Route path="/topics" component={props => <TopicsPage signOut={signOut} topics={topics}name= {name} {...props} />}/>
         <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
         <Route path="/gaming-Timeline" component={props => <EventsPage_Gaming name= {name} {...props} />}/>
+
        </Switch>
       </div>
 
