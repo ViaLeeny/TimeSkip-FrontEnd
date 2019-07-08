@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 const signinUrl = baseUrl + "/signin";
 const signUpUrl = baseUrl + "/signup";
 
