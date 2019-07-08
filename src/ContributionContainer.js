@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Icon, Image } from 'semantic-ui-react'
+//import { Card, Icon, Image } from 'semantic-ui-react'
 
 class ContributionContainer extends Component {
   constructor(props) {
