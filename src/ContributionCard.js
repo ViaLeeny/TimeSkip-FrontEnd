@@ -4,15 +4,19 @@ class ContributionCard extends Component {
   render() {
     return (
       <div>
-        <h1>User ID {this.props.contribution.user_id} says:</h1>
+        <h2>
+          {" "}
+          ({this.props.contribution.created_at}) User ID{" "}
+          {this.props.contribution.user_id} said:
+        </h2>
 
         <p className="comment">{this.props.contribution.text}</p>
         <img
           alt={this.props.contribution.id}
           src={this.props.contribution.url}
+          onError="this.onerror=null; this.src='/images/noimage.gif';" 
           className="picture"
         />
-        <p> Cooment Made: {this.props.contribution.created_at}</p>
       </div>
     );
   }
