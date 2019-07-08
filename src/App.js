@@ -8,6 +8,7 @@ import TopicsPage from './Pages/TopicsPage'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import EventsPage from './components/EventsPage';
 import EventsPage_Gaming from './components_Gaming/EventsPage_Gaming';
+import ChooseAvatar from './Pages/ChooseAvatar'
 
 
 const topicsURL = "http://localhost:3001/topics"
@@ -18,7 +19,8 @@ class App extends React.Component {
   state = {
       name: "",
       topics: [], 
-      events: []
+      events: [], 
+      avatar: ""
   } 
 
 	componentDidMount() {
@@ -41,12 +43,11 @@ class App extends React.Component {
   //SIGN UP FUNCTION
     signUp = name => {
       this.setState({name})
-      this.props.history.push('./topics')
   }
 
   //RENDER THE USER WELCOME SCREEN
   render (){
-    const { name, topics } = this.state
+    const { name, topics, avatar } = this.state
     const { signIn, signOut, signUp } = this
 
   //ROUTES FOR EACH LINK WITHIN THE APPLICATION
@@ -55,10 +56,11 @@ class App extends React.Component {
        <Switch>
         <Route exact path="/" component={props => <HomePage {...props} />}/>
         <Route path="/signin" component={props => <SignInForm signIn={signIn} {...props} />}/>
-        <Route path="/signup" component={props => <SignUpForm signIn={signIn} {...props} />}/>
+        <Route path="/signup" component={props => <SignUpForm signUp={signUp} {...props} />}/>
         <Route path="/topics" component={props => <TopicsPage signOut={signOut} topics={topics}name= {name} {...props} />}/>
         <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
         <Route path="/gaming-Timeline" component={props => <EventsPage_Gaming name= {name} {...props} />}/>
+        <Route path="/user-avatar" component={props => <ChooseAvatar name= {name} avatar={avatar} {...props} />}/>
 
        </Switch>
       </div>

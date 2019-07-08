@@ -14,12 +14,11 @@ export function signin(name, password) {
 
 //sign up 
 export function signup(name, password) {
-  console.log(name, password)
   return fetch(signUpUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, password })
-  }).then(resp => resp.json()).then(console.log);
+  }).then(resp => resp.json());
 }
 
 export default { signin };

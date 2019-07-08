@@ -30,7 +30,16 @@ label {
 }
 
 .topic-container{
-  color: greenyellow
+  color: greenyellow;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.TopicPage{
+  align-self: center;
+
 }
 
 .topic-card {
@@ -49,12 +58,22 @@ label {
   display: inline-block;
 }
 
-.ui.grid > .row.bot-army-row {
+.ui.grid.five > .row.bot-army-row {
   flex-wrap: nowrap;
   min-height: 100%;
 }
 
-.ui.grid {
+.ui.grid.five {
+  padding: 0px 20px;
+}
+
+
+.ui.grid.two > .row.bot-army-row {
+  flex-wrap: nowrap;
+  min-height: 100%;
+}
+
+.ui.grid.two {
   padding: 0px 20px;
 }
 
