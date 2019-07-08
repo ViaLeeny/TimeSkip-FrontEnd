@@ -3,7 +3,7 @@ import TimelineContainer_Gaming from '../components_Gaming/Timeline_Gaming/Timel
 import EventCard_Gaming from './EventCard_Gaming'
 
 
-const eventsURL = "http://localhost:3001/events"
+const eventsURL = "http://localhost:3000/events"
 
 class EventsPage_Gaming extends React.Component {
 	state = {
@@ -36,7 +36,7 @@ class EventsPage_Gaming extends React.Component {
     
     //THIS FUNCTION HANDLES THE CLICK ON ANY EVENT ON THE TIMELINE
     showGamingEventCard = (gamingEvent) => {
-        console.log(gamingEvent)
+        //console.log(gamingEvent)
       
         this.setState({
             selectedEvent: [gamingEvent]

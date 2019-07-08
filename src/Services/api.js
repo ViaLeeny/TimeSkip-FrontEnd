@@ -14,7 +14,7 @@ export function signin(name, password) {
 
 //sign up 
 export function signup(name, password) {
-  console.log(name, password)
+  //console.log(name, password)
   return fetch(signUpUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

@@ -5,7 +5,9 @@ import EventCard from './EventCard'
 
 
 
+
 const eventsURL = "http://localhost:3000/events"
+
 
 
 
@@ -24,6 +26,7 @@ class EventsPage extends React.Component {
 	//SORTED SPACE EVENTS
 	sortedEvents = () => {
 		const eventsArray = [...this.state.events]
+
 
 		//PASSING ONLY SPACE EVENTS TO SORT FUNCTION BELOW
 		const onlySpaceEvents = [...eventsArray].filter(event => event.topic_id === 1)
