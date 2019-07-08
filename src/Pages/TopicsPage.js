@@ -23,7 +23,7 @@ class TopicsPage extends React.Component {
             {
                 this.props.name.length > 0 
                 ? <div> 
-                    <h1>Which topic would you like to choose from {this.props.name}?</h1>
+                    <h1>Which topic would you like to choose {this.props.name}?</h1>
                     <Link to='/' onClick={this.props.signout} class="ui primary button" >Sign Out </Link>
                     <div className="ui two column grid">
 				    <div className="row bot-army-row">
