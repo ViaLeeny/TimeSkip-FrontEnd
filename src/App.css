@@ -1,3 +1,5 @@
+
+/* UPDATED CSS IMPORTED FROM MASTER */
 /* DEFAULT CSS FROM CREATE REACT APP*/
 .App {
   text-align: center;
@@ -100,6 +102,17 @@ label {
     transform: rotate(360deg);
   }
 }
+
+.button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  border-radius: 10pc;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+/* 
 .button {
   position: relative;
   top: 50%;
@@ -131,7 +144,7 @@ label {
 .button:active {
 	position: relative;
 	top: 1px;
-}
+} */
 .picture {
   height: 450px;
   font-style: oblique;
@@ -152,7 +165,7 @@ label {
   align-content: center;
 }
 
-.description {
+/* .description {
   background:#1AAB8A;
   color:#fff;
   border:none;
@@ -199,7 +212,7 @@ label {
   width:100%;
   transition:800ms ease all;
 
-}
+} */
 
 
 .date {
