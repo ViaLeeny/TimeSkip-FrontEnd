@@ -3,7 +3,7 @@ import React from 'react'
 import TimelineContainer from './Timeline/TimelineContainer.js'
 import EventCard from './EventCard'
 
-const eventsURL = "http://localhost:3001/events"
+const eventsURL = "http://localhost:3000/events"
 
 class EventsPage extends React.Component {
 	state = {
@@ -20,7 +20,7 @@ class EventsPage extends React.Component {
 	//SORTED SPACE EVENTS
 	sortedEvents = () => {
 		const eventsArray = [...this.state.events]
-		console.log(eventsArray)
+		//console.log(eventsArray)
 
 		//PASSING ONLY SPACE EVENTS TO SORT FUNCTION BELOW
 		const onlySpaceEvents = [...eventsArray].filter(event => event.topic_id === 1)

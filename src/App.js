@@ -10,7 +10,7 @@ import EventsPage from './components/EventsPage';
 import EventsPage_Gaming from './components_Gaming/EventsPage_Gaming';
 
 
-const topicsURL = "http://localhost:3001/topics"
+const topicsURL = "http://localhost:3000/topics"
 
 class App extends React.Component {
 

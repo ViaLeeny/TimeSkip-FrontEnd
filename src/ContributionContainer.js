@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ContributionCard from "./ContributionCard";
 //import { Card, Icon, Image } from 'semantic-ui-react'
 
 class ContributionContainer extends Component {
@@ -6,28 +7,30 @@ class ContributionContainer extends Component {
     super(props);
     this.state = {};
   }
+  
+  selectedEventsContributions = () => {
+    
+    console.log("event id")
+    console.log(this.props.event.id)
 
-  // componentDidMount() {
-  //   fetch(CONTRIBUTIONS_URL)
-  //     .then(resp => resp.json())
-  //     .then(contributions => {
-  //       //console.log(contributions)
-  //       this.setState({ contributions: contributions });
-  //     });
-  // }
+    console.log("all contributions")
+    console.log(this.props.contributions)
+  }
 
   render() {
     return (
       <div className="contribution">
         <h3>contribution Display:</h3>
-
         {/* <img src={ this.props.contributions[0].url}/>
         <p> {this.props.contributions[0].text }</p> */}
-        
         <p>
-          {this.props.contributions.length > 0
-            ? this.props.contributions[0].text
-            : "no contributions yet!"}
+          {this.props.contributions.length > 0 ? (
+            <ContributionCard
+              selectedEventsContributions={this.selectedEventsContributions()}
+            />
+          ) : (
+            "no contributions yet!"
+          )}
         </p>
         {/* <p>{this.props.contributions[0].text}</p> */}
         <img
@@ -38,8 +41,6 @@ class ContributionContainer extends Component {
           }
           width="100"
         />
-        
-        
       </div>
     );
   }
