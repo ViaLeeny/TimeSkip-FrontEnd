@@ -23,6 +23,8 @@ class EventCard extends React.Component {
 				<p>{this.props.event.description}</p>
 			</div>
 
+			<button className="button">Contribute to this</button>
+
 		</div>
 
 		)
