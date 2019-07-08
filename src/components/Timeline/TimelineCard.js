@@ -3,11 +3,9 @@ import React from 'react'
 class TimelineCard extends React.Component {
 	render() {
 		return (
-			
+
 		<div>
-			
-			<button className="button">{this.props.date.slice(0, 4)}</button>
-	
+			<button className="button" onClick={() => this.props.selectYear((this.props.eventObj))}>{this.props.date.slice(0, 4)}</button>
 		</div>
 		)
 	}

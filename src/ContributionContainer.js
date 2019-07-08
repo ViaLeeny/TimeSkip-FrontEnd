@@ -7,6 +7,15 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
+  // componentDidMount() {
+  //   fetch(CONTRIBUTIONS_URL)
+  //     .then(resp => resp.json())
+  //     .then(contributions => {
+  //       //console.log(contributions)
+  //       this.setState({ contributions: contributions });
+  //     });
+  // }
+
   render() {
     return (
       <div className="contribution">
