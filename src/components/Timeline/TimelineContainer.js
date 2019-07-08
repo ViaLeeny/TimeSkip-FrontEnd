@@ -1,5 +1,5 @@
 import React from 'react'
-import TimelineCard_Space from './TimelineCard_Space'
+import TimelineCard from './TimelineCard'
 
 class TimelineContainer extends React.Component {
 
