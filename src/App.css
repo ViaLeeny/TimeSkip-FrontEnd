@@ -33,6 +33,38 @@ label {
   color: greenyellow
 }
 
+.topic-card {
+  margin: 50px 50px 50px 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.event-card{
+  margin: 50px 50px 50px 50px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: inline-block;
+}
+
+.ui.grid > .row.bot-army-row {
+  flex-wrap: nowrap;
+  min-height: 100%;
+}
+
+.ui.grid {
+  padding: 0px 20px;
+}
+
+.gaming-timeline {
+  overflow-x: scroll;
+  min-height: 150px;
+  max-width: 100%;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

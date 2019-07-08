@@ -24,8 +24,9 @@ class SignUpForm extends React.Component {
     
     //SUBMIT USERNAME AND PASSWORD FOR USER CREATION
     handleSubmit = () => {
-        signup(this.state.username, this.state.password).then(data => {
-            this.props.signup(data.username);
+        signup(this.state.name, this.state.password)
+        .then(data => {
+          this.props.signIn(data.name);
         }
         );
     };

@@ -4,18 +4,28 @@ import './App.css';
 import HomePage from './Pages/HomePage'
 import SignInForm from './Pages/SignInForm'
 import SignUpForm from './Pages/SignUpForm'
-import Topics from './Pages/Topics'
-import TimelineContainer from './components/Timeline/TimelineContainer'
+import TopicsPage from './Pages/TopicsPage'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import EventsPage from './components/EventsPage';
+import EventsPage_Gaming from './components_Gaming/EventsPage_Gaming';
 
+
+const topicsURL = "http://localhost:3001/topics"
 
 class App extends React.Component {
 
   //STATE FOR USER WHO IS LOGGED IN
   state = {
-      name: ""
+      name: "",
+      topics: [], 
+      events: []
   } 
+
+	componentDidMount() {
+		fetch(topicsURL)
+		.then((resp) => resp.json())
+		.then((data) => this.setState({topics: data}))
+	}
 
   //SIGN IN FUNCTION
   signIn = name => {
@@ -29,15 +39,15 @@ class App extends React.Component {
   }
 
   //SIGN UP FUNCTION
-    signUp = () => {
-      this.setState({name: ""})
+    signUp = name => {
+      this.setState({name})
       this.props.history.push('./topics')
   }
 
   //RENDER THE USER WELCOME SCREEN
   render (){
-    const { name } = this.state
-    const { signIn, signOut } = this
+    const { name, topics } = this.state
+    const { signIn, signOut, signUp } = this
 
   //ROUTES FOR EACH LINK WITHIN THE APPLICATION
     return(
@@ -46,8 +56,10 @@ class App extends React.Component {
         <Route exact path="/" component={props => <HomePage {...props} />}/>
         <Route path="/signin" component={props => <SignInForm signIn={signIn} {...props} />}/>
         <Route path="/signup" component={props => <SignUpForm signIn={signIn} {...props} />}/>
-        <Route path="/topics" component={props => <Topics signOut={signOut} name= {name} {...props} />}/>
+        <Route path="/topics" component={props => <TopicsPage signOut={signOut} topics={topics}name= {name} {...props} />}/>
         <Route path="/Space-Timeline" component={props => <EventsPage name= {name} {...props} />}/>
+        <Route path="/gaming-Timeline" component={props => <EventsPage_Gaming name= {name} {...props} />}/>
+
        </Switch>
       </div>
 

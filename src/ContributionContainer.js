@@ -19,6 +19,15 @@ class ContributionContainer extends React.Component {
       });
   }
 
+  // componentDidMount() {
+  //   fetch(CONTRIBUTIONS_URL)
+  //     .then(resp => resp.json())
+  //     .then(contributions => {
+  //       //console.log(contributions)
+  //       this.setState({ contributions: contributions });
+  //     });
+  // }
+
   render() {
     return (
       <div className="contribution">
