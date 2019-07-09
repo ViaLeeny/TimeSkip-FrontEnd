@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     return (
     <div className="App">
         <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src='../Assets/TimeSkip_logo.png' className="App-logo" alt="logo" />
         <h1>TimeSkip</h1>
         
         <div>

@@ -1,7 +1,6 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl = "http://localhost:3000";
 const signinUrl = baseUrl + "/signin";
 const signUpUrl = baseUrl + "/signup";
-
 
 //FETCH USER
 export function signin(name, password) {
@@ -12,8 +11,10 @@ export function signin(name, password) {
   }).then(resp => resp.json());
 }
 
-//sign up 
+//SIGN UP
 export function signup(name, password) {
+
+  //console.log(name, password)
   return fetch(signUpUrl, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -21,4 +22,11 @@ export function signup(name, password) {
   }).then(resp => resp.json());
 }
 
-export default { signin };
+export function validate(){
+  return fetch('http://localhost:3000/validate', {
+    headers: { 'Authorization': localStorage.token }
+  }).then(resp => resp.json())
+}
+
+
+export default { signin, validate };

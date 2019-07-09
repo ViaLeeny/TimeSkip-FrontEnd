@@ -29,7 +29,7 @@ class SignInForm extends React.Component {
             if (data.error) {
                 alert(data.error);
             } else {
-                this.props.signIn(data.name);
+                this.props.signIn(data);
             }
         });
     };
