@@ -8,30 +8,22 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   const filteredEventContributions = () => {
-  //     console.log("here are all contributions");
-  //     console.log(this.props.contributions);
-
-  //     let eventContributions = this.props.contributions.map(
-  //       contribution => contribution.event_id === this.props.event.id
-  //     );
-  //     //debugger;
-
-  //     this.setState({ filteredContributions: eventContributions });
-  //   };
-  // }
 
   render() {
     return (
       <div className="contribution">
-        <h3>Contribution Container:</h3>
+        <div className="sub-div">
+          <h1>Scroll to see your comments</h1>
+            <p>
+               {this.props.contributions.map(cont => {
 
-        <p>
-          {this.props.contributions.map(cont => {
-            return <ContributionCard contribution={cont} />;
-          })}
-        </p>
+                return <ContributionCard setContributionToEdit={this.props.setContributionToEdit} contribution={cont} fetchContributions={this.props.fetchContributions} toggleShowForm={this.props.toggleForm}/>;
+
+              })}
+            </p>
+
+        </div>
+
       </div>
     );
   }
