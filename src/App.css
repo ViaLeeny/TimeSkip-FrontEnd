@@ -159,8 +159,9 @@ label {
   color:#fff;
   border:none;
   position:relative;
-  height:60px;
-  font-size:1em;
+  height:120px;
+  font-size:1.5em;
+  width: auto;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
@@ -173,34 +174,6 @@ label {
   background:#fff;
   color:#1AAB8A;
   border-radius: 50pc;
-
-}
-
-.description:before, .description:after {
-  border-radius: 50pc;
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #1AAB8A;
-  transition:400ms ease all;
-
-}
-
-.description:after{
-  border-radius: 50pc;
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-
-}
-.description:hover:before,.description:hover:after{
-  border-radius: 50pc;
-  width:100%;
-  transition:800ms ease all;
 
 }
 
@@ -271,19 +244,20 @@ label {
 .rowC{
   display:flex; flex-direction:row;
   color: #000;
-  padding: 5%;
+  padding: 2%;
 }
 
 .contribution {
   color: black;
-  background-color: yellow;
-  box-shadow: 15px 10px 5px orange;
+  background-color: #9f7e69;
   border-radius: 30px;
   align-content: left;
   height: 300px;
   overflow:visible;
   overflow-y: scroll;
   overflow-x: scroll;
+  margin: 0 auto;
+  width: 60%;
 
 }
 
@@ -339,11 +313,13 @@ label {
 .comment-container{
   width: 450px;
   margin: auto;
-  background-color: #1AAB8A;
-  white-space: normal;
+  background-color: #ffeee2;
   overflow: auto;
   border-style: solid;
+}
 
+.comment-container:hover{
+  box-shadow: 20px 15px 10px 5px white;
 }
 
 

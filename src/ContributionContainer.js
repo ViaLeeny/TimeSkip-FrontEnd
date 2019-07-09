@@ -16,7 +16,9 @@ class ContributionContainer extends Component {
           <h1>Scroll to see your comments</h1>
             <p>
                {this.props.contributions.map(cont => {
+
                 return <ContributionCard setContributionToEdit={this.props.setContributionToEdit} contribution={cont} fetchContributions={this.props.fetchContributions} toggleShowForm={this.props.toggleForm}/>;
+
               })}
             </p>
 
