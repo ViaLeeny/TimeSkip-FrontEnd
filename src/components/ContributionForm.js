@@ -6,8 +6,18 @@ class ContributionForm extends Component {
     super(props);
     this.state = {
       formImage: "",
-      formText: ""
+      formText: "",
+      editContribution: false
     };
+  }
+
+  componentDidMount() {
+    let contra = this.props.contributionToEdit;
+    //this.props.toggleForm(true);
+    if (contra) {
+      this.setState({ formImage: contra.url, formText: contra.text });
+      this.setState({editContribution: true})
+    }
   }
 
   isValidImageUrl = url => {};
@@ -16,12 +26,20 @@ class ContributionForm extends Component {
     return 1;
   };
 
-  postContribution = event => {
+  postContribution = (event, editContribution) => {
+    event.preventDefault();
+    let contributionToEdit = this.props.contributionToEdit
+    let fetchMethod = editContribution ? "PATCH" : "POST";
+    let contributionId = contributionToEdit? contributionToEdit.id: null;
+
+    let urlContributionId = contributionId ? contributionId : "";
+    alert(urlContributionId);
+
     let headers = {
       "Content-Type": "application/json",
       Accepts: "application/json"
     };
-    event.preventDefault();
+   
     let formImage = this.state.formImage;
     let formText = this.state.formText;
     let event_id = this.props.event.id;
@@ -29,8 +47,8 @@ class ContributionForm extends Component {
     console.log(formImage);
     console.log(formText);
 
-    return fetch(CONTRIBUTIONS_URL, {
-      method: "POST",
+    return fetch(CONTRIBUTIONS_URL + urlContributionId, {
+      method: fetchMethod,
       headers: headers,
       body: JSON.stringify({
         url: formImage,
@@ -39,19 +57,12 @@ class ContributionForm extends Component {
         user_id: this.currentUser()
       })
     }).then(res => {
-      
-      this.props.toggleForm()
-      this.props.fetchContributions()
-      return res.json()});
+      this.props.toggleForm();
+      this.props.fetchContributions();
+      this.setState({editContribution: false, formImage: "", formText: ""})
+      return res.json();
+    });
   };
-
-  // login = (username, password) => {
-  //   return fetch(`${API_BASE_URL}/auth/create`, {
-  //     method: "POST",
-  //     headers: headers,
-  //     body: JSON.stringify({ username, password })
-  //   }).then(res => res.json());
-  // };
 
   handleChange = event => {
     this.setState({
@@ -62,8 +73,12 @@ class ContributionForm extends Component {
   };
 
   render() {
+    let formImage = this.state.formImage;
+    let formText = this.state.formText;
+    let editContribution = this.state.editContribution;
+
     return (
-      <form onSubmit={event => this.postContribution(event)}>
+      <form onSubmit={event => this.postContribution(event, editContribution)}>
         <div>
           <label for="contribution-url" />
           <input
@@ -71,6 +86,7 @@ class ContributionForm extends Component {
             id="formImage"
             className="contribution-url"
             name="url"
+            value={formImage === "" ? "" : `${formImage}`}
             placeholder="Paste an image url here"
             onChange={event => this.handleChange(event)}
           />
@@ -84,6 +100,7 @@ class ContributionForm extends Component {
             rows="4"
             cols="50"
             maxlength="140"
+            value={formText === "" ? "" : `${formText}`}
             placeholder="Comment Here"
             onChange={event => this.handleChange(event)}
           />

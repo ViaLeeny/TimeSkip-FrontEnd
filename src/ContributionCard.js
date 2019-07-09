@@ -71,12 +71,18 @@ class ContributionCard extends Component {
           </label>
           <div style={{ marginBottom: "20px" }}>
             <button
-              onClick={event => console.log("Please add edit function")}
+              onClick={event => {
+                //trying to get the from to prepopulate live...unsure
+                this.props.setContributionToEdit(this.props.contribution);
+                setTimeout(this.props.toggleShowForm(false), 500);
+                this.props.toggleShowForm();       
+              }}
               class="comment-btn"
               type="button"
             >
               Edit Comment
             </button>
+
             <button
               onClick={event => this.deleteContribution()}
               class="comment-btn"

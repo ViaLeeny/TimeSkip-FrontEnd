@@ -7,7 +7,8 @@ class EventCard extends React.Component {
     super(props);
     this.state = {
       contributions: [],
-      showForm: false
+      showForm: false,
+      contributionToEdit: null
     };
   }
   //ROSS: on Mount, fetches ALL contributions and saves to state
@@ -15,16 +16,27 @@ class EventCard extends React.Component {
     this.fetchContributions();
   }
 
+  setContributionToEdit = contribution => {
+    this.setState({ contributionToEdit: contribution }, () =>
+      console.log(this.state.contributionToEdit)
+    );
+  };
+
   fetchContributions = () => {
     return fetch(CONTRIBUTIONS_URL)
       .then(resp => resp.json())
       .then(contributions => {
         this.setState({ contributions });
       });
-  }
+  };
 
-  toggleShowForm = () => {
-    this.setState({ showForm: !this.state.showForm });
+  toggleShowForm = (bool = "jeff") => {
+    if (bool === "jeff") {
+      this.setState({ showForm: !this.state.showForm });
+    } else {
+      this.setState({ showForm: bool });
+      //debugger;
+    }
   };
 
   // ROSS: returns all contributions for this event. Called in the render.
@@ -48,7 +60,7 @@ class EventCard extends React.Component {
   render() {
     return (
       <div className="eventCard">
-	  <br />
+        <br />
         <br />
 
         <h1 className="title">{this.props.event.name}</h1>
@@ -65,37 +77,35 @@ class EventCard extends React.Component {
           <p>{this.props.event.description}</p>
         </div>
 
-		<br />
+        <br />
         <button
           onClick={() => this.setState({ showForm: !this.state.showForm })}
           class="comment-btn"
           type="button"
         >
-          Add Comment
+          {this.state.showForm ? "Cancel" : "Add Comment"}
         </button>
 
-
-		<br />
-		<br />
-
-
-
+        <br />
+        <br />
         <div>
           {this.state.showForm ? (
             <ContributionForm
               toggleForm={this.toggleShowForm}
               event={this.props.event}
               fetchContributions={this.fetchContributions}
+              contributionToEdit={this.state.contributionToEdit}
             />
           ) : null}
         </div>
-
 
         <div>
           <ContributionContainer
             event={this.props.event}
             contributions={this.reverseContributions()}
             fetchContributions={this.fetchContributions}
+            toggleForm={this.toggleShowForm}
+            setContributionToEdit={this.setContributionToEdit}
           />
         </div>
       </div>
