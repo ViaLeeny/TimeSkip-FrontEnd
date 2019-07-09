@@ -8,10 +8,13 @@
     "animate.css": "^3.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-html-id": "^0.1.5",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.2"
+    "semantic-ui-react": "^0.87.2",
+    "styled-components": "^4.2.0",
+    "uniqueid": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

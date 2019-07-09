@@ -104,7 +104,7 @@ label {
   position: relative;
   top: 50%;
   float: left;
-	width: 65px;
+	width: 120px;
 	height: 45px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 11px;
@@ -147,6 +147,7 @@ label {
 .picture:hover {
   transform: scale(1.2);
 
+
 }
 
 .eventCard {
@@ -165,6 +166,7 @@ label {
   transition:800ms ease all;
   outline:none;
   border-radius: 50pc;
+
 }
 
 .description:hover {
@@ -229,81 +231,6 @@ label {
 
 }
 
-.comment {
-  background:lightskyblue;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:60px;
-  font-size:1em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  border-radius: 50pc;
-}
-
-.comment:hover {
-  background:#fff;
-  color:lightskyblue;
-  border-radius: 50pc;
-
-}
-
-.comment:before, .comment:after {
-  border-radius: 50pc;
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: lightskyblue;
-  transition:400ms ease all;
-
-}
-
-.comment:after{
-  border-radius: 50pc;
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-
-}
-.comment:hover:before,.comment:hover:after{
-  border-radius: 50pc;
-  width:100%;
-  transition:800ms ease all;
-
-}
-
-.comment-btn {
-  border: 0;
-  line-height: 2.5;
-  padding: 0 20px;
-  font-size: 1rem;
-  text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px 1px #000;
-  border-radius: 10px;
-  background-color: rgba(220, 0, 0, 1);
-  background-image: linear-gradient(to top left,
-                                    rgba(0, 0, 0, .2),
-                                    rgba(0, 0, 0, .2) 30%,
-                                    rgba(0, 0, 0, 0));
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-              inset -2px -2px 3px rgba(0, 0, 0, .6);
-}
-
-.comment-btn:hover {
-  background-color: rgba(255, 0, 0, 1);
-}
-
-.comment-btn:active {
-  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
-              inset 2px 2px 3px rgba(0, 0, 0, .6);
-}
 
 .submit-btn {
   width: 100px;
@@ -314,7 +241,7 @@ label {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  
+
 }
 
 .submit-btn:hover {
@@ -340,3 +267,83 @@ label {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+.rowC{
+  display:flex; flex-direction:row;
+  color: #000;
+  padding: 5%;
+}
+
+.contribution {
+  color: black;
+  background-color: yellow;
+  box-shadow: 15px 10px 5px orange;
+  border-radius: 30px;
+  align-content: left;
+  height: 300px;
+  overflow:visible;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+}
+
+.contributionPic{
+  border: none;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  padding:30px;
+  border-radius: 50px;
+}
+
+.comment{
+  color: black;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+  font-size: 20px;
+  width: 200px;
+  align-content: center;
+}
+
+.comment-btn {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.comment-btn:hover{
+    background: #0053ba;
+}
+
+.comment-btn:hover{
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.comment-btn:hover{
+    transform: scale(0.99);
+}
+
+.comment-container{
+  width: 450px;
+  margin: auto;
+  background-color: #1AAB8A;
+  white-space: normal;
+  overflow: auto;
+  border-style: solid;
+
+}
+
+
