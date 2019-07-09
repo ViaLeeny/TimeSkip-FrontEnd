@@ -24,36 +24,7 @@ class ContributionCard extends Component {
       return res.json();
     });
   };
-
-  // postContribution = event => {
-  //   let headers = {
-  //     "Content-Type": "application/json",
-  //     Accepts: "application/json"
-  //   };
-  //   event.preventDefault();
-  //   let formImage = this.state.formImage;
-  //   let formText = this.state.formText;
-  //   let event_id = this.props.event.id;
-  //   let user_id = 1;
-  //   console.log(formImage);
-  //   console.log(formText);
-
-  //   return fetch(CONTRIBUTIONS_URL, {
-  //     method: "POST",
-  //     headers: headers,
-  //     body: JSON.stringify({
-  //       url: formImage,
-  //       text: formText,
-  //       event_id: event_id,
-  //       user_id: this.currentUser()
-  //     })
-  //   }).then(res => {
-
-  //     this.props.toggleForm()
-  //     this.props.fetchContributions()
-  //     return res.json()});
-  // };
-
+  
   render() {
     return (
       <div className="rowC">

@@ -13,42 +13,43 @@ class ContributionForm extends Component {
 
   componentDidMount() {
     let contra = this.props.contributionToEdit;
-    //this.props.toggleForm(true);
+
     if (contra) {
-      this.setState({ formImage: contra.url, formText: contra.text });
-      this.setState({editContribution: true})
+      this.setState({
+        formImage: contra.url,
+        formText: contra.text,
+        editContribution: true
+      });
+    } else {
+      this.setState({ formImage: "", formText: "", editContribution: false });
     }
   }
 
   isValidImageUrl = url => {};
-
+  // TO DO!! get the real user!
   currentUser = () => {
     return 1;
   };
 
   postContribution = (event, editContribution) => {
     event.preventDefault();
-    let contributionToEdit = this.props.contributionToEdit
+    let contributionToEdit = this.props.contributionToEdit;
+    //BELOW: Ross: conditional variables to make this function POST or PATCH
     let fetchMethod = editContribution ? "PATCH" : "POST";
-    let contributionId = contributionToEdit? contributionToEdit.id: null;
-
+    let contributionId = contributionToEdit ? contributionToEdit.id : null;
     let urlContributionId = contributionId ? contributionId : "";
-    alert(urlContributionId);
 
     let headers = {
       "Content-Type": "application/json",
       Accepts: "application/json"
     };
-   
-    let formImage = this.state.formImage;
-    let formText = this.state.formText;
+
+    let { formImage, formText } = this.state;
     let event_id = this.props.event.id;
     let user_id = 1;
-    console.log(formImage);
-    console.log(formText);
 
     return fetch(CONTRIBUTIONS_URL + urlContributionId, {
-      method: fetchMethod,
+      method: fetchMethod, //DYNAMICALLY set above
       headers: headers,
       body: JSON.stringify({
         url: formImage,
@@ -59,23 +60,17 @@ class ContributionForm extends Component {
     }).then(res => {
       this.props.toggleForm();
       this.props.fetchContributions();
-      this.setState({editContribution: false, formImage: "", formText: ""})
+      this.setState({ editContribution: false, formImage: "", formText: "" });
       return res.json();
     });
   };
 
   handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-    // event.persist();
-    //console.log(event);
+    this.setState({ [event.target.id]: event.target.value });
   };
 
   render() {
-    let formImage = this.state.formImage;
-    let formText = this.state.formText;
-    let editContribution = this.state.editContribution;
+    let {formImage, formText, editContribution} = this.state
 
     return (
       <form onSubmit={event => this.postContribution(event, editContribution)}>
