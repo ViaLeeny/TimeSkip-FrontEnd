@@ -95,6 +95,7 @@ class EventCard extends React.Component {
           <ContributionContainer
             event={this.props.event}
             contributions={this.reverseContributions()}
+            fetchContributions={this.fetchContributions}
           />
         </div>
       </div>

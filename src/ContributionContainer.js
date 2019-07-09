@@ -29,7 +29,7 @@ class ContributionContainer extends Component {
           <h1>Scroll to see your comments</h1>
             <p>
                {this.props.contributions.map(cont => {
-                return <ContributionCard contribution={cont} />;
+                return <ContributionCard contribution={cont} fetchContributions={this.props.fetchContributions} />;
               })}
             </p>
 
