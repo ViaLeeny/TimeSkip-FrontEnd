@@ -1,6 +1,8 @@
 import React from 'react'
 import TimelineContainer_Gaming from '../components_Gaming/Timeline_Gaming/TimelineContainer_Gaming';
 import EventCard_Gaming from './EventCard_Gaming'
+import HomePage from '../Pages/HomePage';
+import NavBar from '../components/NavBar'
 
 
 const eventsURL = "http://localhost:3000/events"
@@ -14,7 +16,11 @@ class EventsPage_Gaming extends React.Component {
 	componentDidMount() {
 		fetch(eventsURL)
 		.then((resp) => resp.json())
-		.then((data) => this.setState({events: data}))
+        .then((data) => this.setState({events: data}))
+        
+        // if (!this.props.name){
+        //     this.props.history.push('./signin')
+        // }
 	}
 
 	//SORTED GAMING EVENTS
@@ -36,7 +42,7 @@ class EventsPage_Gaming extends React.Component {
     
     //THIS FUNCTION HANDLES THE CLICK ON ANY EVENT ON THE TIMELINE
     showGamingEventCard = (gamingEvent) => {
-        //console.log(gamingEvent)
+        console.log(gamingEvent)
       
         this.setState({
             selectedEvent: [gamingEvent]
@@ -47,26 +53,18 @@ class EventsPage_Gaming extends React.Component {
         const {sortedGamingEvents, showGamingEventCard} = this
         const {selectedEvent} = this.state
 
-        if (selectedEvent.length > 0){
-		return(
-		<div>
+            return (
+            <div>
+            <NavBar signOut={this.props.signOut}/>
             <TimelineContainer_Gaming 
                 gamingEvents={sortedGamingEvents()} 
                 showGamingEventCard={showGamingEventCard}
             />
-            <EventCard_Gaming 
-            selectedEvent={selectedEvent[0]}
-            />
+            {selectedEvent.length > 0 ?
+				(<EventCard_Gaming selectedEvent={selectedEvent[0]} />) : null
+			}
 		</div>
-        )} else {
-            return(
-                <div>
-                    <TimelineContainer_Gaming 
-                        gamingEvents={sortedGamingEvents()} 
-                        showGamingEventCard={showGamingEventCard}
-                    />
-                </div>
-            )}
+            )
 	}
 }
 
