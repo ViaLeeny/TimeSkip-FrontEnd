@@ -2,10 +2,6 @@ import React from 'react'
 
 class TimelineCard_Gaming extends React.Component {
 
-	handleClick = () => {
-
-	}
-
 	render() {
 		return (
 			

@@ -6,7 +6,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 10s linear;
   height: 30vmin;
   pointer-events: none;
 }
@@ -171,8 +171,8 @@ label {
 .eventCard {
   align-content: center;
 }
-
-/* .description {
+/* 
+ .description {
   background:#1AAB8A;
   color:#fff;
   border:none;
@@ -193,7 +193,7 @@ label {
   color:#1AAB8A;
   border-radius: 50pc;
 
-}
+} */
 
 .date {
   font-size: 20px;

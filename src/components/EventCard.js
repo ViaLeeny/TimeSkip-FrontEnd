@@ -81,7 +81,7 @@ class EventCard extends React.Component {
         <button
           onClick={() => {
             //make sure form is cleared when it is opened/closed:
-            this.setState({ showForm: !this.state.showForm, contributionToEdit:null }) 
+            this.setState({ showForm: !this.state.showForm, contributionToEdit: null }) 
             
           }}
           class="comment-btn"

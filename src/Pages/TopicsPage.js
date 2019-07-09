@@ -26,7 +26,8 @@ class TopicsPage extends React.Component {
     <div className="App">
        
         <header className="App-header topicPage">
-        <img src={logo} className="App-logo" alt="logo" />
+        
+        <img src='https://images.vexels.com/media/users/3/136991/isolated/preview/064fd00b13b1c206ff592032ffca1e0c-time-clock-icon-by-vexels.png' className="App-logo" alt="logo" />
                 <div> 
                     <h1>Choose a topic, {this.props.name}</h1>
                     <div className="ui two column grid">

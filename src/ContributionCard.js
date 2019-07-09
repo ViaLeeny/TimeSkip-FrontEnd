@@ -28,7 +28,7 @@ class ContributionCard extends Component {
     });
   };
 
-  addDefaultSrc = event => {
+  addDefaultSrc = event => { 
     event.persist();
     let defaultUrl = "http://localhost:3001/space-timeline"; //QU why default to this?
     if (
@@ -36,11 +36,8 @@ class ContributionCard extends Component {
       !(event.target.src === defaultUrl)
     ) {
       alert("Broken image link! Please click 'Edit Comment' to try again ;-)");
-      //debugger;
-      console.log(event);
     }
     if (!(event.target.src == defaultUrl)) {
-      //debugger;
       event.target.src =
         "https://66.media.tumblr.com/d7102042007e56d30fb4b0c3ce250668/tumblr_onwdj0kx1m1txuzyco1_1280.jpg";
       this.setState({ imageErrorCounter: this.state.imageErrorCounter + 1 });
