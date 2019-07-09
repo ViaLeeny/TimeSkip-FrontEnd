@@ -7,11 +7,8 @@ class TimelineContainer extends React.Component {
 		return (
 			<div className="timelinecontainer">
 
+
 				{this.props.events.map((event, index) => <TimelineCard key={index} date={event.date} eventObj={event} selectYear={this.props.selectionOfYear}/>)}
-
-
-
-
 
 			</div>
 		)

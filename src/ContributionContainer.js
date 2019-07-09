@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Card, Icon, Image } from 'semantic-ui-react'
+import ContributionCard from "./ContributionCard";
+//import { Card, Icon, Image } from 'semantic-ui-react'
 
 class ContributionContainer extends Component {
   constructor(props) {
@@ -7,30 +8,33 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
+  // componentDidMount() {
+  //   const filteredEventContributions = () => {
+  //     console.log("here are all contributions");
+  //     console.log(this.props.contributions);
+
+  //     let eventContributions = this.props.contributions.map(
+  //       contribution => contribution.event_id === this.props.event.id
+  //     );
+  //     //debugger;
+
+  //     this.setState({ filteredContributions: eventContributions });
+  //   };
+  // }
+
   render() {
     return (
       <div className="contribution">
-        <h3>contribution Display:</h3>
+        <div className="sub-div">
+          <h1>Scroll to see your comments</h1>
+            <p>
+               {this.props.contributions.map(cont => {
+                return <ContributionCard contribution={cont} />;
+              })}
+            </p>
 
-        {/* <img src={ this.props.contributions[0].url}/>
-        <p> {this.props.contributions[0].text }</p> */}
-        
-        <p>
-          {this.props.contributions.length > 0
-            ? this.props.contributions[0].text
-            : "no contributions yet!"}
-        </p>
-        {/* <p>{this.props.contributions[0].text}</p> */}
-        <img
-          src={
-            this.props.contributions.length > 0
-              ? this.props.contributions[0].url
-              : "no contributions yet!"
-          }
-          width="100"
-        />
-        
-        
+        </div>
+
       </div>
     );
   }
