@@ -17,6 +17,23 @@ class ContributionCard extends Component {
           onError="this.onerror=null; this.src='/images/noimage.gif';" 
           className="picture"
         />
+        <div style={{marginBottom: "20px"}}> 
+          <button
+          onClick={"hello"}
+          class="comment-btn"
+          type="button"
+        >
+          Edit Comment
+        </button>
+          <button
+          onClick={"delete"}
+          class="comment-btn"
+          type="button"
+        >
+          Delete Comment
+        </button>
+        </div>
+
       </div>
     );
   }
