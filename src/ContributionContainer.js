@@ -25,13 +25,16 @@ class ContributionContainer extends Component {
   render() {
     return (
       <div className="contribution">
-        <h1>Comments: </h1>
+        <div className="sub-div">
+          <h1>Scroll to see your comments</h1>
+            <p>
+               {this.props.contributions.map(cont => {
+                return <ContributionCard contribution={cont} />;
+              })}
+            </p>
 
-        <p>
-          {this.props.contributions.map(cont => {
-            return <ContributionCard contribution={cont} />;
-          })}
-        </p>
+        </div>
+
       </div>
     );
   }

@@ -9,27 +9,23 @@ import EventsPage from '../components/EventsPage'
 import TopicCard from './TopicCard'
 
 
-
-
-class TopicsPage extends React.Component {
+class ChooseAvatar extends React.Component {
 
 
 
     render(){
     return (
     <div className="App">
-        <header className="App-header topicPage">
+        <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
             {
                 this.props.name.length > 0 
                 ? <div> 
-                    <h1>Which topic would you like to choose {this.props.name}?</h1>
+                    <h1>Choose your avatar, {this.props.name}</h1>
                     <Link to='/' onClick={this.props.signout} class="ui primary button" >Sign Out </Link>
-                    <div className="ui two column grid">
-				    <div className="row bot-army-row">
+                    <div>
                         {this.props.topics.map((topic, index) => <TopicCard key={topic.id} name={topic.name} description={topic.description}/>)}
                     </div>
-                    </div>    
                   </div>
                 : 
                 <div>
@@ -43,4 +39,4 @@ class TopicsPage extends React.Component {
     );}
 }
 
-export default TopicsPage;
+export default ChooseAvatar;

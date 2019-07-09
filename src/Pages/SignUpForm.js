@@ -11,7 +11,8 @@ class SignUpForm extends React.Component {
     //STATE FOR USER LOGIN DETAILS TYPED IN FORM
     state = {
         name: "", 
-        password: ""
+        password: "",
+        currentUser: []
     }
     
     
@@ -26,44 +27,101 @@ class SignUpForm extends React.Component {
     handleSubmit = () => {
         signup(this.state.name, this.state.password)
         .then(data => {
-          this.props.signIn(data.name);
+            console.log(data.name)
+                this.props.signUp(data.name)
+                this.setState({
+                    name: data.name
+                })
         }
+
         );
     };
+
+
+//SIGNIN FUNCTION AS EXAMPLE
+    // handleSubmit = () => {
+    //     signin(this.state.name, this.state.password)
+    //     .then(data => {
+    //         if (data.error) {
+    //             alert(data.error);
+    //         } else {
+    //             this.props.signIn(data.name);
+    //         }
+    //     });
+    // };
 
     //USER SIGNUP FORM
     render(){
     const {name, password} = this.state
     const {handleChange, handleSubmit} = this
-    return (
-    <div className="App">
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Create your TimeSkip Account</h1>
-        <div>
 
-    <Form>
-        <label>Name</label>
-        <Form.Field>
-        <input name="name" placeholder='Name' value={name} placeholder='Name' onChange={handleChange} />
-        </Form.Field>
-        <label>Password</label>
-        <Form.Field>
-        <input name="password" placeholder='Password' value={password} placeholder='Password' onChange={handleChange} />
-        </Form.Field>
-        <Form.Field>
-        </Form.Field>
-        <br />
-        <button class="ui primary button" onClick={handleSubmit} >Submit</button>
-    </Form>
-
-        </div>
-
-        </header>
+        return( 
         
+     <div className="App">
+     <header className="App-header">
+     <img src={logo} className="App-logo" alt="logo" />
+     <h1>Create your TimeSkip Account</h1>
+     <div>
 
-    </div>
-    );}
-}
+ <Form>
+     <label>Name</label>
+     <Form.Field>
+     <input name="name" placeholder='Name' value={name} placeholder='Name' onChange={handleChange} />
+     </Form.Field>
+     <label>Password</label>
+     <Form.Field>
+     <input type="password" name="password" placeholder='Password' value={password} placeholder='Password' onChange={handleChange} />
+     </Form.Field>
+     <Form.Field>
+     </Form.Field>
+     <br />
+     <Link to='/Topics' class="ui primary button" onClick={handleSubmit} >Submit</Link>
+ </Form>
+
+     </div>
+
+     </header>
+     
+
+ </div>
+    )
+
+    }
+    
+    ;}
 
 export default SignUpForm;
+
+
+// CODE FOR AVATAR STRETCH GOAL
+// if (name.length > 0 ){
+//     return (
+//         <div className="App">
+//         <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <h1>Choose your avatar</h1>
+//         <div>
+
+//     <Form>
+//         <label>Name</label>
+//         <Form.Field>
+//         <input name="name" placeholder='Name' value={name} placeholder='Name' onChange={handleChange} />
+//         </Form.Field>
+//         <label>Password</label>
+//         <Form.Field>
+//         <input name="password" placeholder='Password' value={password} placeholder='Password' onChange={handleChange} />
+//         </Form.Field>
+//         <Form.Field>
+//         </Form.Field>
+//         <br />
+//         <Link to='/Topics' class="ui primary button" onClick={handleSubmit} >Submit</Link>
+//     </Form>
+
+//         </div>
+
+//         </header>
+        
+
+//     </div>
+   
+//     )} else {
