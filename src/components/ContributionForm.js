@@ -94,7 +94,7 @@ class ContributionForm extends Component {
             className="contribution-text"
             rows="4"
             cols="50"
-            maxlength="140"
+            maxlength="1000"
             value={formText === "" ? "" : `${formText}`}
             placeholder="Comment Here"
             onChange={event => this.handleChange(event)}
