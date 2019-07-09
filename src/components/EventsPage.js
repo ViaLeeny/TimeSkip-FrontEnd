@@ -3,6 +3,7 @@ import React from 'react'
 import TimelineContainer from './Timeline/TimelineContainer.js'
 import EventCard from './EventCard'
 import HomePage from '../Pages/HomePage'
+import NavBar from './NavBar'
 
 
 
@@ -56,6 +57,7 @@ class EventsPage extends React.Component {
 			const {events, selectedYear} = this.state;
 		return(
 		<div className="space">
+			 <NavBar signOut={this.props.signOut}/>
 			<TimelineContainer events={this.sortedEvents()} selectionOfYear={this.selectYearOfEvent}/>
 			{selectedYear.length > 0 ?
 				(<EventCard event={selectedYear[0]} />) : console.log(selectedYear)

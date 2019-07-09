@@ -2,6 +2,7 @@ import React from 'react'
 import TimelineContainer_Gaming from '../components_Gaming/Timeline_Gaming/TimelineContainer_Gaming';
 import EventCard_Gaming from './EventCard_Gaming'
 import HomePage from '../Pages/HomePage';
+import NavBar from '../components/NavBar'
 
 
 const eventsURL = "http://localhost:3000/events"
@@ -54,6 +55,7 @@ class EventsPage_Gaming extends React.Component {
 
             return (
             <div>
+            <NavBar signOut={this.props.signOut}/>
             <TimelineContainer_Gaming 
                 gamingEvents={sortedGamingEvents()} 
                 showGamingEventCard={showGamingEventCard}

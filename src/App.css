@@ -93,6 +93,11 @@ label {
   max-width: 100%;
 }
 
+.toTopics {
+  position: absolute;
+  right: 15px;
+}
+
 
 @keyframes App-logo-spin {
   from {
