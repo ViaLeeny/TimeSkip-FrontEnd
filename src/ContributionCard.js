@@ -22,10 +22,23 @@ class ContributionCard extends Component {
           className="contributionPic"
         />
       </label>
+    <div style={{marginBottom: "20px"}}> 
+          <button
+          onClick={"hello"}
+          class="comment-btn"
+          type="button"
+        >
+          Edit Comment
+        </button>
+          <button
+          onClick={"delete"}
+          class="comment-btn"
+          type="button"
+        >
+          Delete Comment
+        </button>
+        </div>
       </div>
-
-
-
 
       </div>
     );
