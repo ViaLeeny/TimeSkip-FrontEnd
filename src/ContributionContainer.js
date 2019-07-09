@@ -8,19 +8,6 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   const filteredEventContributions = () => {
-  //     console.log("here are all contributions");
-  //     console.log(this.props.contributions);
-
-  //     let eventContributions = this.props.contributions.map(
-  //       contribution => contribution.event_id === this.props.event.id
-  //     );
-  //     //debugger;
-
-  //     this.setState({ filteredContributions: eventContributions });
-  //   };
-  // }
 
   render() {
     return (
@@ -29,7 +16,9 @@ class ContributionContainer extends Component {
           <h1>Scroll to see your comments</h1>
             <p>
                {this.props.contributions.map(cont => {
-                return  <ContributionCard contribution={cont} />;
+
+                return <ContributionCard setContributionToEdit={this.props.setContributionToEdit} contribution={cont} fetchContributions={this.props.fetchContributions} toggleShowForm={this.props.toggleForm}/>;
+
               })}
             </p>
 
