@@ -27,8 +27,6 @@ class EventCard_Gaming extends React.Component {
       let eventContributions = [...this.state.contributions].filter(
         contribution => contribution.event_id === this.props.selectedEvent.id
       );
-      console.log("Here are the filtered contributions for this event:");
-      console.log(eventContributions);
  
       return eventContributions;
   };
