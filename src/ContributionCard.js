@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import uniqueId from "react-html-id";
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
+const LIKES_URL = `http://localhost:3000/likes`;
 
 class ContributionCard extends Component {
   constructor() {
@@ -40,6 +41,8 @@ class ContributionCard extends Component {
       !(event.target.src === defaultUrl)
     ) {
       alert("Broken image link! Please click 'Edit Comment' to try again ;-)");
+
+      console.log(event);
     }
     if (!(event.target.src == defaultUrl)) {
       event.target.src =
@@ -49,10 +52,32 @@ class ContributionCard extends Component {
   };
 
 
+  addUserLike = () => {
+    //event.preventDefault();
+    let contributionToEdit = this.props.contributionToEdit;
 
+    let headers = {
+      "Content-Type": "application/json",
+      Accepts: "application/json"
+    };
 
+    let user_id = 1; // TO CHANGE !! to actulay current user
 
-
+    return fetch(LIKES_URL, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({
+        contribution_id: this.props.contribution.id
+      })
+    })
+      .then(res => res.json())
+      .then(promise => {
+        console.log(promise);
+        let id = JSON.stringify(promise.id)
+        let contribution_id = JSON.stringify(promise.contribution_id)
+        localStorage.setItem(contribution_id , id)
+      });
+  };
 
 
   render() {
@@ -75,6 +100,13 @@ class ContributionCard extends Component {
           ) : null}
 
           <div style={{ marginBottom: "20px" }}>
+            {/* <button
+              class="comment-btn"
+              type="button"
+              onClick={this.addUserLike}
+            >
+              <span>Like</span>
+            </button> */}
             <button
               onClick={event => {
                 //trying to get the from to prepopulate live...unsure
