@@ -84,16 +84,8 @@ class EventCard extends React.Component {
       <div className="eventCard">
         <br />
         <br />
-<<<<<<< HEAD
 
         <h1 className="title">{event.name}</h1>
-=======
-            <h1 className="title">{this.props.event.name}</h1>
-
-
-      <div className="card-s">
-        <h1 className="title">{this.props.event.name}</h1>
->>>>>>> f4a2744f0f0dc0f50bd3344efca0b52636c6e59b
 
         <div className="date">
           <p>Date of Expedition: {event.date}</p>
@@ -107,7 +99,7 @@ class EventCard extends React.Component {
           <p>{this.props.event.description}</p>
         </div>
 
-      </div>
+     
 
 
 
