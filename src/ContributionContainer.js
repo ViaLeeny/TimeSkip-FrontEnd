@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContributionCard from "./ContributionCard";
-import { Button, Comment, Form, Header } from 'semantic-ui-react'
+import { Button, Comment, Form, Header } from "semantic-ui-react";
 
 class ContributionContainer extends Component {
   constructor(props) {
@@ -8,21 +8,34 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
+  getAuthor = cont => {
+    return this.props.users.find(user => {
+      debugger;
+      return user.id === cont.user_id;
+    });
+  };
 
   render() {
     return (
       <div className="contribution">
-        <div >
+        <div>
           <h1>Comments</h1>
-            <p>
-               {this.props.contributions.map(cont => {
-
-                return <ContributionCard setContributionToEdit={this.props.setContributionToEdit} contribution={cont} fetchContributions={this.props.fetchContributions} toggleShowForm={this.props.toggleForm}/>;
-
-              })}
-            </p>
+          <p>
+            {this.props.contributions.map(cont => {
+              // IS THIS THE CULPRIT? try defining it as a function outside the render?
+              return (
+                <ContributionCard
+                  setContributionToEdit={this.props.setContributionToEdit}
+                  contribution={cont}
+                  fetchContributions={this.props.fetchContributions}
+                  toggleShowForm={this.props.toggleForm}
+                  user={this.getAuthor(cont)}
+                  fetchUsers={this.props.fetchUsers}
+                />
+              );
+            })}
+          </p>
         </div>
-
       </div>
     );
   }
