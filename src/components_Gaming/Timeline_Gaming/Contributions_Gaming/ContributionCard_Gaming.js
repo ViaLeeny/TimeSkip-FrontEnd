@@ -50,8 +50,8 @@ class ContributionCard_Gaming extends Component {
   render() {
     return (
       <div className="rowC">
-        <div className="comment-container">
-          <p> User {this.props.contribution.user_id} says:</p>
+        <div className="comment-container-gaming">
+          <h3 className='comment-user'> User {this.props.contribution.user_id} says:</h3>
           <p className="comment" id={this.lastUniqueId()}>
             {this.props.contribution.text}
           </p>

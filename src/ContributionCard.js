@@ -83,7 +83,7 @@ class ContributionCard extends Component {
   render() {
     return (
     <div className="comment-container">
-    <h3 className="your-comment">Your Comment:</h3>
+    <h3 className="comment-user">Your Comment:</h3>
           <p className="comment" id={this.lastUniqueId()}>
             {this.props.contribution.text}
           </p>
