@@ -1,6 +1,8 @@
 import React from "react";
 import ContributionContainer from "../ContributionContainer.js";
 import ContributionForm from "./ContributionForm.js";
+import { Segment, Header, Image, Icon } from 'semantic-ui-react'
+
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 class EventCard extends React.Component {
   constructor(props) {
@@ -62,56 +64,55 @@ class EventCard extends React.Component {
       <div className="eventCard">
         <br />
         <br />
+            <h1 className="title">{this.props.event.name}</h1>
 
-        <h1 className="title">{this.props.event.name}</h1>
+            <div className="date">
+              <p>Date of Expedition: {this.props.event.date}</p>
+            </div>
 
-        <div className="date">
-          <p>Date of Expedition: {this.props.event.date}</p>
-        </div>
+            <div>
+              <img class="picture" src={this.props.event.image_url} />
+            </div>
 
-        <div>
-          <img className="picture" src={this.props.event.image_url} />
-        </div>
+            <div className="description">
+              <p>{this.props.event.description}</p>
+            </div>
 
-        <div className="description-s">
-          <p>{this.props.event.description}</p>
-        </div>
+            <br />
+            <button
+              onClick={() => {
+                //make sure form is cleared when it is opened/closed:
+                this.setState({ showForm: !this.state.showForm, contributionToEdit:null }) 
+                
+              }}
+              class="comment-btn"
+              type="button"
+            >
+              {this.state.showForm ? "Cancel" : "Add Comment"}
+            </button>
 
-        <br />
-        <button
-          onClick={() => {
-            //make sure form is cleared when it is opened/closed:
-            this.setState({ showForm: !this.state.showForm, contributionToEdit: null })
+            <br />
+            <br />
+            <div>
+              {this.state.showForm ? (
+                <ContributionForm
+                  toggleForm={this.toggleShowForm}
+                  event={this.props.event}
+                  fetchContributions={this.fetchContributions}
+                  contributionToEdit={this.state.contributionToEdit}
+                />
+              ) : null}
+            </div>
 
-          }}
-          class="comment-btn"
-          type="button"
-        >
-          {this.state.showForm ? "Cancel" : "Add Comment"}
-        </button>
-
-        <br />
-        <br />
-        <div>
-          {this.state.showForm ? (
-            <ContributionForm
-              toggleForm={this.toggleShowForm}
-              event={this.props.event}
-              fetchContributions={this.fetchContributions}
-              contributionToEdit={this.state.contributionToEdit}
-            />
-          ) : null}
-        </div>
-
-        <div>
-          <ContributionContainer
-            event={this.props.event}
-            contributions={this.reverseContributions()}
-            fetchContributions={this.fetchContributions}
-            toggleForm={this.toggleShowForm}
-            setContributionToEdit={this.setContributionToEdit}
-          />
-        </div>
+            <div>
+              <ContributionContainer
+                event={this.props.event}
+                contributions={this.reverseContributions()}
+                fetchContributions={this.fetchContributions}
+                toggleForm={this.toggleShowForm}
+                setContributionToEdit={this.setContributionToEdit}
+              />
+            </div>
       </div>
     );
   }

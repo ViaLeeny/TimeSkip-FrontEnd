@@ -42,7 +42,7 @@ export default function ElevateAppBar(props) {
         <AppBar>
           <Toolbar>
           <Link to='/topics' >
-          <Image src='https://images.vexels.com/media/users/3/136991/isolated/preview/064fd00b13b1c206ff592032ffca1e0c-time-clock-icon-by-vexels.png' size='tiny' circular />
+          <Image class= 'App-logo' src='https://images.vexels.com/media/users/3/136991/isolated/preview/064fd00b13b1c206ff592032ffca1e0c-time-clock-icon-by-vexels.png' size='tiny' circular />
           </Link>
           <h1>TimeSkip</h1>
             <Link to='/topics' class="ui primary button toTopics" > Go Back To Topics </Link>
