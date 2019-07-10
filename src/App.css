@@ -169,9 +169,9 @@ label {
 
 
 .picture {
-  height: 450px;
+  height: 400px;
   font-style: oblique;
-  width: 600px;
+  width: 550px;
   background-color: wheat;
   align-content: center;
   border-radius: 10px;
@@ -188,28 +188,45 @@ label {
 .eventCard {
   align-content: center;
   flex-direction: column;
+  background-color: #bfeeff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px cyan;
+  margin: 0 auto;
+  width: 50%;
+
+}.card{
+  background-color: papayawhip;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 80%;
+  height: 60%;
+  padding: 20px;
+  border: black;
+  border-style: double;
 }
 
 
-.description {
-  background: red;
-  color: peachpuff;
-  height: 100px;
+.description-s {
+  background: blue;
+  color: #fff;
+  height: 150px;
   font-size: 16px;
   opacity: 0.6;
   transition: 0.3s;
   border-radius: 15px;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
+  font-size: 15px;
 
 
 }
 
 
-.description:hover {
-  background: peachpuff;
-  color: red;
+.description-s:hover {
+  background: white;
+  color: blue;
   opacity: 1;
+  box-shadow: 12px 8px 4px black;
 }
 
 
@@ -279,7 +296,7 @@ label {
   overflow-y: scroll;
   overflow-x: scroll;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   flex-wrap: nowrap;
 }
 
@@ -350,12 +367,14 @@ label {
   color: black;
 }
 
-.eventCard{
-  background-color: #2bc7ff;
-  border-radius: 15px;
-  box-shadow: 15px 10px 5px grey;
-  margin: 0 auto;
-  width: 50%;
 
+
+.space{
+    background-image: url("http://getwallpapers.com/wallpaper/full/8/1/a/1183874-ultra-hd-space-wallpaper-2560x1440-pc.jpg");
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-

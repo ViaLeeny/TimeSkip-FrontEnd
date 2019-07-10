@@ -63,6 +63,8 @@ class EventCard extends React.Component {
         <br />
         <br />
 
+
+      <div className="card">
         <h1 className="title">{this.props.event.name}</h1>
 
         <div className="date">
@@ -73,9 +75,13 @@ class EventCard extends React.Component {
           <img className="picture" src={this.props.event.image_url} />
         </div>
 
-        <div className="description">
+        <div className="description-s">
           <p>{this.props.event.description}</p>
         </div>
+
+      </div>
+
+
 
         <br />
         <button
