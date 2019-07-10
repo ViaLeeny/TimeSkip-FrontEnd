@@ -64,7 +64,7 @@ class EventCard extends React.Component {
         <br />
 
 
-      <div className="card">
+      <div className="card-s">
         <h1 className="title">{this.props.event.name}</h1>
 
         <div className="date">
