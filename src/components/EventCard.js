@@ -18,7 +18,7 @@ class EventCard extends React.Component {
   }
   //ROSS: on Mount, fetches ALL contributions and saves to state
   componentDidMount() {
-   this.setUsersAndContributions() 
+   this.setUsersAndContributions()
   }
 
   setContributionToEdit = contribution => {
@@ -30,7 +30,7 @@ class EventCard extends React.Component {
   fetchUsers = () => {
     return fetch(USERS_URL)
       .then(resp => resp.json())
-    
+
   };
 
   fetchContributions = () => {
@@ -38,7 +38,7 @@ class EventCard extends React.Component {
       .then(resp => resp.json())
   };
 
-  //ROSS: function that calls one fetch after (.then) the other is finished and 
+  //ROSS: function that calls one fetch after (.then) the other is finished and
   //then sets the state of both at once (prevents erros in Conttribution Container)
   setUsersAndContributions = () => {
     this.fetchUsers().then(users => {
@@ -86,56 +86,9 @@ class EventCard extends React.Component {
         <br />
             <h1 className="title">{this.props.event.name}</h1>
 
-// <<<<<<< styling
-//             <div className="date">
-//               <p>Date of Expedition: {this.props.event.date}</p>
-//             </div>
 
-//             <div>
-//               <img class="picture" src={this.props.event.image_url} />
-//             </div>
-
-//             <div className="description">
-//               <p>{this.props.event.description}</p>
-//             </div>
-
-//             <br />
-//             <button
-//               onClick={() => {
-//                 //make sure form is cleared when it is opened/closed:
-//                 this.setState({ showForm: !this.state.showForm, contributionToEdit:null }) 
-                
-//               }}
-//               class="comment-btn"
-//               type="button"
-//             >
-//               {this.state.showForm ? "Cancel" : "Add Comment"}
-//             </button>
-
-//             <br />
-//             <br />
-//             <div>
-//               {this.state.showForm ? (
-//                 <ContributionForm
-//                   toggleForm={this.toggleShowForm}
-//                   event={this.props.event}
-//                   fetchContributions={this.fetchContributions}
-//                   contributionToEdit={this.state.contributionToEdit}
-//                 />
-//               ) : null}
-//             </div>
-
-//             <div>
-//               <ContributionContainer
-//                 event={this.props.event}
-//                 contributions={this.reverseContributions()}
-//                 fetchContributions={this.fetchContributions}
-//                 toggleForm={this.toggleShowForm}
-//                 setContributionToEdit={this.setContributionToEdit}
-//               />
-//             </div>
-// =======
-        <h1 className="title">{event.name}</h1>
+      <div className="card-s">
+        <h1 className="title">{this.props.event.name}</h1>
 
         <div className="date">
           <p>Date of Expedition: {event.date}</p>
@@ -145,10 +98,13 @@ class EventCard extends React.Component {
           <img className="picture" src={event.image_url} />
         </div>
 
-        <div className="description">
-          <p>{event.description}</p>
-
+        <div className="description-s">
+          <p>{this.props.event.description}</p>
         </div>
+
+      </div>
+
+
 
         <br />
         <button
