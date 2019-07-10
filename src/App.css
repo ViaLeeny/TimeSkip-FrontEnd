@@ -191,7 +191,7 @@ label {
 }
 
 
-.description {
+.description-s {
   background: red;
   color: peachpuff;
   height: 100px;
@@ -201,12 +201,15 @@ label {
   border-radius: 15px;
   margin: 0 auto;
   width: 60%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px
 
 
 }
 
 
-.description:hover {
+.description-s:hover {
   background: peachpuff;
   color: red;
   opacity: 1;
@@ -226,6 +229,8 @@ label {
 .title {
   font-family: Verdana, Geneva, sans-serif;
 }
+
+
 
 
 
@@ -281,6 +286,25 @@ label {
   margin: 0 auto;
   width: 60%;
   flex-wrap: nowrap;
+}
+
+.contribution-gaming {
+  color: #ffbb00;
+  background-image: url("https://i.pinimg.com/originals/1c/4c/18/1c4c184685de49eb62f75ea05bd248fe.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  align-content: left;
+  height: 1000px;
+  overflow:visible;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.rowC{
+  padding-top: 10px
 }
 
 .contributionPic{
@@ -346,8 +370,30 @@ label {
 }
 
 
-.your-comment{
-  color: black;
+.comment-container-gaming{
+  width: 450px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+  box-shadow: 8px 6px 4px silver;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.comment-container-gaming:hover{
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px cyan;
+}
+
+.comment-heading{
+  color: white ;
+}
+
+.comment-user{
+  color: grey ;
 }
 
 .eventCard{
