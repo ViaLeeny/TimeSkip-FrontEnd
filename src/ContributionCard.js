@@ -12,6 +12,9 @@ class ContributionCard extends Component {
     };
   }
 
+
+
+
   deleteContribution = () => {
     let cont_id = this.props.contribution.id;
     let headers = {
@@ -29,7 +32,8 @@ class ContributionCard extends Component {
     });
   };
 
-  addDefaultSrc = event => { 
+
+  addDefaultSrc = event => {
     event.persist();
     let defaultUrl = "http://localhost:3001/space-timeline"; //QU why default to this?
     if (
@@ -46,6 +50,7 @@ class ContributionCard extends Component {
       this.setState({ imageErrorCounter: this.state.imageErrorCounter + 1 });
     }
   };
+
 
   addUserLike = () => {
     //event.preventDefault();
@@ -74,11 +79,11 @@ class ContributionCard extends Component {
       });
   };
 
+
   render() {
     return (
-      <div className="rowC">
-        <div className="comment-container">
-          <p> User {this.props.contribution.user_id} says:</p>
+    <div className="comment-container">
+    <h3 className="your-comment">Your Comment:</h3>
           <p className="comment" id={this.lastUniqueId()}>
             {this.props.contribution.text}
           </p>
@@ -124,8 +129,8 @@ class ContributionCard extends Component {
             </button>
           </div>
         </div>
-      </div>
-    );
+
+    )
   }
 }
 
