@@ -54,7 +54,7 @@ class EventsPage extends React.Component {
 			 <NavBar signOut={this.props.signOut}/>
 			<TimelineContainer events={this.sortedEvents()} selectionOfYear={this.selectYearOfEvent}/>
 			{selectedYear.length > 0 ?
-				(<EventCard event={selectedYear[0]} />) : console.log(selectedYear)
+				(<EventCard event={selectedYear[0]} />) : <h1 class='choose-event'>Select a year to see an event</h1>
 			}
 		</div>
 

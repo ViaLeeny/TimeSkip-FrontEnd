@@ -65,14 +65,14 @@ class EventCard_Gaming extends React.Component {
 			
             <div class = 'event-card'>
             <Segment padded='very'>
-            <Image src={this.props.selectedEvent.image_url} size='medium' rounded centered bordered/> 
+            <Image src={this.props.selectedEvent.image_url} size='large' rounded centered bordered className='picture'/> 
             <Header as='h2'>{this.props.selectedEvent.date.slice(0, 4)}</Header>
             <Header as='h2'>{this.props.selectedEvent.name}</Header>
               <p>
               {this.props.selectedEvent.description}
               </p>
-              <Icon name='add' />
-              <Icon name='heart' />
+              {/* <Icon name='add' />
+              <Icon name='heart' /> */}
               <button
                   onClick={() => {
                     this.setState({ showForm: !this.state.showForm, contributionToEdit:null })                   

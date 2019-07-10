@@ -6,7 +6,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 10s linear;
+  animation: App-logo-spin infinite 9s linear;
   height: 30vmin;
   pointer-events: none;
 }
@@ -56,7 +56,29 @@ label {
   align-items: center;
   flex-direction: column;
   display: flex;
+  /* width: 100px; */
+  padding: 30px;
 }
+
+.description {
+  padding: 20px;
+  word-spacing: 5px;
+  line-height: 20px;
+}
+
+.card {
+  height: 415px;
+}
+
+.choose-event{
+  font-size: 90px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: rgba(128, 128, 128, 0.342);
+}
+
+
 
 .event-card{
   margin: 50px 50px 50px 50px;
@@ -64,12 +86,19 @@ label {
   align-items: center;
   flex-direction: column;
   display: inline-block;
+  width: 60%
 }
 
 .ui.grid.five > .row.bot-army-row {
   flex-wrap: nowrap;
   min-height: 100%;
 }
+
+.ui.segment > .row.bot-army-row {
+  flex-wrap: nowrap;
+  min-height: 100%;
+}
+
 
 .ui.grid.five {
   padding: 0px 20px;
@@ -120,6 +149,12 @@ label {
   }
 }
 
+.add-comment {
+  position: absolute;
+  left: 40%;
+  margin-bottom: 30px;
+}
+
 .button {
   background-color: #4CAF50; /* Green background */
   border: 1px solid green; /* Green border */
@@ -129,6 +164,8 @@ label {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
 }
+
+
 
 .button-s {
   position: center;
@@ -230,11 +267,9 @@ label {
   box-shadow: 12px 8px 4px black;
 }
 
-
 .date {
   font-size: 20px;
   color: black;
-
 }
 
 .timelinecontainer {
@@ -244,8 +279,6 @@ label {
 .title {
   font-family: Verdana, Geneva, sans-serif;
 }
-
-
 
 .submit-btn {
   width: 100px;
@@ -284,8 +317,6 @@ label {
 }
 
 
-
-
 .contribution {
   color: white;
   background-image: url("https://hdwallsource.com/img/2018/2/minimal-digital-art-space-wallpaper-background-64899-67102-hd-wallpapers.jpg");
@@ -299,6 +330,25 @@ label {
   margin: 0 auto;
   width: 80%;
   flex-wrap: nowrap;
+}
+
+.contribution-gaming {
+  color: #ffbb00;
+  background-image: url("https://kit8.net/images/thumbnails/580/386/detailed/4/gamer@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  align-content: left;
+  height: 1000px;
+  overflow:visible;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.rowC{
+  padding-top: 10px
 }
 
 .contributionPic{
@@ -364,8 +414,30 @@ label {
 }
 
 
-.your-comment{
-  color: black;
+.comment-container-gaming{
+  width: 450px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+  box-shadow: 8px 6px 4px silver;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.comment-container-gaming:hover{
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px cyan;
+}
+
+.comment-heading{
+  color: white ;
+}
+
+.comment-user{
+  color: grey ;
 }
 
 
