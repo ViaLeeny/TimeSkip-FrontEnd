@@ -1,16 +1,10 @@
 import React from 'react'
-
 import TimelineContainer from './Timeline/TimelineContainer.js'
 import EventCard from './EventCard'
-import HomePage from '../Pages/HomePage'
 import NavBar from './NavBar'
 
 
-
-
 const eventsURL = "http://localhost:3000/events"
-
-
 
 
 class EventsPage extends React.Component {

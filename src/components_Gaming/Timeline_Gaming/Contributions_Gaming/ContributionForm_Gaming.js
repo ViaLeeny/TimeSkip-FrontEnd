@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 
-class ContributionForm extends Component {
+class ContributionForm_Gaming extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,7 @@ class ContributionForm extends Component {
 
   componentDidMount() {
     let contra = this.props.contributionToEdit;
+
     if (contra) {
       this.setState({
         formImage: contra.url,
@@ -107,6 +108,4 @@ class ContributionForm extends Component {
   }
 }
 
-export default ContributionForm;
-
-///action="/action_page.php"
+export default ContributionForm_Gaming;
