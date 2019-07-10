@@ -73,7 +73,7 @@ class EventCard extends React.Component {
           <img className="picture" src={this.props.event.image_url} />
         </div>
 
-        <div className="description">
+        <div className="description-s">
           <p>{this.props.event.description}</p>
         </div>
 

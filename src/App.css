@@ -98,6 +98,18 @@ label {
   right: 15px;
 }
 
+.signout{
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  border-radius: 10pc;
+  cursor: pointer; /* Pointer/hand icon */
+  position: absolute; /* Float the buttons side by side */
+  right: 40px;
+  top: 20px
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -117,8 +129,8 @@ label {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
 }
-/* 
-.button {
+
+.button-s {
   position: relative;
   top: 50%;
   float: left;
@@ -137,19 +149,24 @@ label {
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
   outline: none;
+  margin: auto;
+  top: 10px ; 
+  bottom: 30px
 }
 
-.button:hover {
+.button-s:hover {
 	background-color: #2EE59D;
 	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 	color: #fff;
 	transform: translateY(-7px);
 }
 
-.button:active {
+.button-s:active {
 	position: relative;
 	top: 1px;
-} */
+}
+
+
 .picture {
   height: 450px;
   font-style: oblique;
@@ -171,8 +188,8 @@ label {
 .eventCard {
   align-content: center;
 }
-/* 
- .description {
+
+ .description-s {
   background:#1AAB8A;
   color:#fff;
   border:none;
@@ -188,12 +205,12 @@ label {
 
 }
 
-.description:hover {
+.description-s:hover {
   background:#fff;
   color:#1AAB8A;
   border-radius: 50pc;
 
-} */
+}
 
 .date {
   font-size: 20px;

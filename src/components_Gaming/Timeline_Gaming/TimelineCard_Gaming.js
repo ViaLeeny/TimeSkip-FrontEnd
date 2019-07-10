@@ -6,7 +6,7 @@ class TimelineCard_Gaming extends React.Component {
 		return (
 			
 		<div>
-			<button className="button" onClick={this.props.clickFunction }>{this.props.date.slice(0, 4)}</button>
+			<button className="button-s" onClick={this.props.clickFunction }>{this.props.date.slice(0, 4)}</button>
 	
 		</div>
 		)
