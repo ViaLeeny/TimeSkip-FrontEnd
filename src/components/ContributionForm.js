@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { validate } from "../Services/api.js";
+import {signin} from "../Services/api.js"
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 
 class ContributionForm extends Component {
@@ -24,9 +26,10 @@ class ContributionForm extends Component {
     }
   }
 
-  isValidImageUrl = url => {};
-  // TO DO!! get the real user!
+
   currentUser = () => {
+    console.log("WHATI IS THIS?");
+    console.log(validate());
     return 1;
   };
 
@@ -45,7 +48,6 @@ class ContributionForm extends Component {
 
     let { formImage, formText } = this.state;
     let event_id = this.props.event.id;
-    let user_id = 1;
 
     return fetch(CONTRIBUTIONS_URL + urlContributionId, {
       method: fetchMethod, //DYNAMICALLY set above
@@ -69,10 +71,14 @@ class ContributionForm extends Component {
   };
 
   render() {
-    let {formImage, formText, editContribution} = this.state
+    let { formImage, formText, editContribution } = this.state;
 
     return (
-      <form onSubmit={event => this.postContribution(event, editContribution)}>
+      <form
+        onSubmit={event => {
+          this.postContribution(event, editContribution);
+        }}
+      >
         <div>
           <label for="contribution-url" />
           <input
@@ -100,10 +106,11 @@ class ContributionForm extends Component {
           />
         </div>
         <div>
-          <input 
-          className={"submit-btn"}
-           type="submit" 
-           value={this.state.editContribution ? "Submit Edit" : "Comment"}/>
+          <input
+            className={"submit-btn"}
+            type="submit"
+            value={this.state.editContribution ? "Submit Edit" : "Comment"}
+          />
         </div>
       </form>
     );
