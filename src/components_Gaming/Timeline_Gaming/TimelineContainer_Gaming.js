@@ -18,8 +18,8 @@ class TimelineContainer_Gaming extends React.Component {
 				</div>
 			</div>
 		)
+		}
 	}
 
-}
 
 export default TimelineContainer_Gaming

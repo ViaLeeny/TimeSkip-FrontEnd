@@ -56,9 +56,10 @@ class EventsPage_Gaming extends React.Component {
             <TimelineContainer_Gaming 
                 gamingEvents={sortedGamingEvents()} 
                 showGamingEventCard={showGamingEventCard}
+                selectedEvent = {selectedEvent}
             />
             {selectedEvent.length > 0 ?
-				(<EventCard_Gaming selectedEvent={selectedEvent[0]} />) : null
+				(<EventCard_Gaming selectedEvent={selectedEvent[0]} />) : <h1 class='choose-event'>Select a year to see an event</h1>
 			}
 		</div>
             )

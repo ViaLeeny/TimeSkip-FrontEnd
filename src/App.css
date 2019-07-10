@@ -6,7 +6,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 10s linear;
+  animation: App-logo-spin infinite 9s linear;
   height: 30vmin;
   pointer-events: none;
 }
@@ -56,7 +56,29 @@ label {
   align-items: center;
   flex-direction: column;
   display: flex;
+  /* width: 100px; */
+  padding: 30px;
 }
+
+.description { 
+  padding: 20px;
+  word-spacing: 5px;
+  line-height: 20px; 
+}
+
+.card {
+  height: 415px;
+}
+
+.choose-event{
+  font-size: 90px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: rgba(128, 128, 128, 0.342);
+}
+
+
 
 .event-card{
   margin: 50px 50px 50px 50px;
@@ -73,7 +95,8 @@ label {
 }
 
 .ui.segment > .row.bot-army-row {
-  width: 80%
+  flex-wrap: nowrap;
+  min-height: 100%;
 }
 
 
@@ -126,6 +149,12 @@ label {
   }
 }
 
+.add-comment {
+  position: absolute;
+  left: 40%;
+  margin-bottom: 30px;
+}
+
 .button {
   background-color: #4CAF50; /* Green background */
   border: 1px solid green; /* Green border */
@@ -135,6 +164,8 @@ label {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
 }
+
+
 
 .button-s {
   position: center;
@@ -401,4 +432,76 @@ label {
   width: 50%;
 
 }
+
+.submit-g{
+  color: #36a148;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 20px;
+  text-decoration: none;
+  background: #51c04e;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.comment-btn-gaming {
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 10px;
+  text-decoration: none;
+  background: #629add;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+
+
+.comment-btn-gaming:hover{
+  background: #0053ba;
+}
+
+.comment-btn-gaming:hover{
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.comment-btn-gaming:hover{
+  transform: scale(0.99);
+}
+
+
+
+.submit-g:hover{
+  background: #0053ba;
+}
+
+.submit-g:hover{
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.submit-g:hover{
+  transform: scale(0.99);
+}
+
+
 

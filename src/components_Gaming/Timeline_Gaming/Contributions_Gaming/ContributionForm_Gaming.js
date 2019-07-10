@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Segment} from 'semantic-ui-react'
+
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 
 class ContributionForm_Gaming extends Component {
@@ -73,6 +75,7 @@ class ContributionForm_Gaming extends Component {
     let {formImage, formText, editContribution} = this.state
 
     return (
+      <Segment>
       <form onSubmit={event => this.postContribution(event, editContribution)}>
         <div>
           <label for="contribution-url" />
@@ -101,9 +104,10 @@ class ContributionForm_Gaming extends Component {
           />
         </div>
         <div>
-          <input className={"submit-btn"} type="submit" value="Submit" />
+          <input className='submit-g' type="submit" value="Submit" />
         </div>
       </form>
+      </Segment>
     );
   }
 }
