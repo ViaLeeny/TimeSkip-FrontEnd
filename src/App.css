@@ -138,8 +138,7 @@ label {
   width: 600px;
   background-color: wheat;
   align-content: center;
-  border-radius: 40px;
-  border-style: dotted;
+  border-radius: 10px;
   margin: 50px;
 
 }
@@ -155,8 +154,8 @@ label {
 }
 
 .description {
-  background:#1AAB8A;
-  color:#fff;
+  background: red;
+  color: peachpuff;
   border:none;
   position:relative;
   height:120px;
@@ -171,8 +170,8 @@ label {
 }
 
 .description:hover {
-  background:#fff;
-  color:#1AAB8A;
+  background: peachpuff;
+  color: red;
   border-radius: 50pc;
 
 }
@@ -180,7 +179,7 @@ label {
 
 .date {
   font-size: 20px;
-  color: white;
+  color: black;
 
 }
 
@@ -190,7 +189,7 @@ label {
 
 .title {
   font-family: 'Electrolize';
-  color: white;
+  color: black;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -198,11 +197,6 @@ label {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-.space{
-  background-image: url("https://media.wired.com/photos/5b7b4f9d5560bb1fedf11c95/master/w_582,c_limit/solarsystem-865297902-%5BConverted%5D.jpg");
-  background-repeat: repeat;
-
-}
 
 
 .submit-btn {
@@ -247,10 +241,11 @@ label {
   padding: 2%;
 }
 
+
 .contribution {
   color: black;
-  background-color: #9f7e69;
-  border-radius: 30px;
+  background-color: #ff9fcd;
+  border-radius: 20px;
   align-content: left;
   height: 300px;
   overflow:visible;
@@ -258,7 +253,6 @@ label {
   overflow-x: scroll;
   margin: 0 auto;
   width: 60%;
-
 }
 
 .contributionPic{
@@ -267,15 +261,13 @@ label {
   height: auto;
   object-fit: contain;
   padding:30px;
-  border-radius: 50px;
+  border-radius: 10px;
 }
 
 .comment{
   color: black;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
-  font-size: 20px;
-  width: 200px;
-  align-content: center;
+  font-size: 15px;
 }
 
 .comment-btn {
@@ -312,14 +304,14 @@ label {
 
 .comment-container{
   width: 450px;
+  border-radius: 10px;
   margin: auto;
-  background-color: #ffeee2;
+  background-color: white;
   overflow: auto;
-  border-style: solid;
+  box-shadow: 8px 6px 4px silver;
 }
 
 .comment-container:hover{
-  box-shadow: 20px 15px 10px 5px white;
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px cyan;
 }
-
-

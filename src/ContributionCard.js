@@ -13,6 +13,7 @@ class ContributionCard extends Component {
       <div className="rowC">
 
       <div className="comment-container">
+        <h3 className="your-comment">Your Comment:</h3>
         <p className="comment" id={this.lastUniqueId()}>{this.props.contribution.text}</p>
         <label htmlfor={this.nextUniqueId()}>
         <img
