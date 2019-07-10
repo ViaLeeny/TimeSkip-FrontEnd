@@ -100,7 +100,10 @@ class ContributionForm extends Component {
           />
         </div>
         <div>
-          <input className={"submit-btn"} type="submit" value="Submit" />
+          <input 
+          className={"submit-btn"}
+           type="submit" 
+           value={this.state.editContribution ? "Submit Edit" : "Comment"}/>
         </div>
       </form>
     );
