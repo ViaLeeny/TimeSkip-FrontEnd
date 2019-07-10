@@ -80,8 +80,9 @@ class ContributionCard extends Component {
 
       <div className="comment-container">
         
-        <h3 className="your-comment" >{this.props.user.name} Says:</h3>
+        
         <p className="comment" id={this.lastUniqueId()}>
+        <h3 className="your-comment" >{this.props.user.name} Says:</h3>
           {this.props.contribution.text}
         </p>
         {/* ROSS: Conditional rendering for image: */}
