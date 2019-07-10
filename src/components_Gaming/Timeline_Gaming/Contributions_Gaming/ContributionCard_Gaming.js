@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Segment } from "semantic-ui-react";
 import uniqueId from "react-html-id";
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
-const LIKES_URL = `http://localhost:3000/likes`;
 
-class ContributionCard extends Component {
+class ContributionCard_Gaming extends Component {
+
   constructor() {
     super();
     uniqueId.enableUniqueIds(this);
@@ -11,6 +12,7 @@ class ContributionCard extends Component {
       imageErrorCounter: 0
     };
   }
+
 
   deleteContribution = () => {
     let cont_id = this.props.contribution.id;
@@ -37,41 +39,12 @@ class ContributionCard extends Component {
       !(event.target.src === defaultUrl)
     ) {
       alert("Broken image link! Please click 'Edit Comment' to try again ;-)");
-
-      console.log(event);
     }
     if (!(event.target.src == defaultUrl)) {
       event.target.src =
         "https://66.media.tumblr.com/d7102042007e56d30fb4b0c3ce250668/tumblr_onwdj0kx1m1txuzyco1_1280.jpg";
       this.setState({ imageErrorCounter: this.state.imageErrorCounter + 1 });
     }
-  };
-
-  addUserLike = () => {
-    //event.preventDefault();
-    let contributionToEdit = this.props.contributionToEdit;
-
-    let headers = {
-      "Content-Type": "application/json",
-      Accepts: "application/json"
-    };
-
-    let user_id = 1; // TO CHANGE !! to actulay current user
-
-    return fetch(LIKES_URL, {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify({
-        contribution_id: this.props.contribution.id
-      })
-    })
-      .then(res => res.json())
-      .then(promise => {
-        console.log(promise);
-        let id = JSON.stringify(promise.id)
-        let contribution_id = JSON.stringify(promise.contribution_id)
-        localStorage.setItem(contribution_id , id)
-      });
   };
 
   render() {
@@ -95,13 +68,6 @@ class ContributionCard extends Component {
           ) : null}
 
           <div style={{ marginBottom: "20px" }}>
-            {/* <button
-              class="comment-btn"
-              type="button"
-              onClick={this.addUserLike}
-            >
-              <span>Like</span>
-            </button> */}
             <button
               onClick={event => {
                 //trying to get the from to prepopulate live...unsure
@@ -126,7 +92,22 @@ class ContributionCard extends Component {
         </div>
       </div>
     );
+    // return (
+    //   <div>
+    //       <Segment> 
+    //     <h1>User ID {this.props.contribution.user_id} says:</h1>
+
+    //     <p className="comment">{this.props.contribution.text}</p>
+    //     <img
+    //       alt={this.props.contribution.id}
+    //       src={this.props.contribution.url}
+    //       className="picture"
+    //     />
+    //     <p> Comment Made: {this.props.contribution.created_at}</p>
+    //     </Segment>
+    //   </div>
+    // );
   }
 }
 
-export default ContributionCard;
+export default ContributionCard_Gaming;

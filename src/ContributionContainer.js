@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContributionCard from "./ContributionCard";
-//import { Card, Icon, Image } from 'semantic-ui-react'
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
 class ContributionContainer extends Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class ContributionContainer extends Component {
   render() {
     return (
       <div className="contribution">
-        <div className="sub-div">
-          <h1>Scroll to see your comments</h1>
+        <div >
+          <h1>Comments</h1>
             <p>
                {this.props.contributions.map(cont => {
 
@@ -21,7 +21,6 @@ class ContributionContainer extends Component {
 
               })}
             </p>
-
         </div>
 
       </div>

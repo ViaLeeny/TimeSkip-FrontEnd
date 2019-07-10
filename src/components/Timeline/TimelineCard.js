@@ -6,7 +6,7 @@ class TimelineCard extends React.Component {
 
 		<div>
 
-			<button className="button" onClick={() => this.props.selectYear((this.props.eventObj))}>{this.props.date.slice(0, 4)}</button>
+			<button className="button-s" onClick={() => this.props.selectYear((this.props.eventObj))}>{this.props.date.slice(0, 4)}</button>
 		</div>
 		)
 	}

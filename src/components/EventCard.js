@@ -73,7 +73,7 @@ class EventCard extends React.Component {
           <img className="picture" src={this.props.event.image_url} />
         </div>
 
-        <div className="description">
+        <div className="description-s">
           <p>{this.props.event.description}</p>
         </div>
 
@@ -81,7 +81,7 @@ class EventCard extends React.Component {
         <button
           onClick={() => {
             //make sure form is cleared when it is opened/closed:
-            this.setState({ showForm: !this.state.showForm, contributionToEdit:null }) 
+            this.setState({ showForm: !this.state.showForm, contributionToEdit: null }) 
             
           }}
           class="comment-btn"

@@ -1,14 +1,10 @@
 import React from 'react'
-
 import TimelineContainer from './Timeline/TimelineContainer.js'
 import EventCard from './EventCard'
-
-
+import NavBar from './NavBar'
 
 
 const eventsURL = "http://localhost:3000/events"
-
-
 
 
 class EventsPage extends React.Component {
@@ -21,12 +17,16 @@ class EventsPage extends React.Component {
 		fetch(eventsURL)
 		.then((resp) => resp.json())
 		.then((data) => this.setState({events: data}))
+		.then(	console.log(this.props.name))
+
+		// if (!this.props.name){
+        //     this.props.history.push('./signin')
+        // }
 	}
 
 	//SORTED SPACE EVENTS
 	sortedEvents = () => {
 		const eventsArray = [...this.state.events]
-
 
 		//PASSING ONLY SPACE EVENTS TO SORT FUNCTION BELOW
 		const onlySpaceEvents = [...eventsArray].filter(event => event.topic_id === 1)
@@ -51,6 +51,7 @@ class EventsPage extends React.Component {
 			const {events, selectedYear} = this.state;
 		return(
 		<div className="space">
+			 <NavBar signOut={this.props.signOut}/>
 			<TimelineContainer events={this.sortedEvents()} selectionOfYear={this.selectYearOfEvent}/>
 			{selectedYear.length > 0 ?
 				(<EventCard event={selectedYear[0]} />) : console.log(selectedYear)
