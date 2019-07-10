@@ -77,6 +77,7 @@ class ContributionCard extends Component {
   render() {
     // let {avatar} = this.props.user
     return (
+
       <div className="comment-container">
         
         <h3 className="your-comment" >{this.props.user.name} Says:</h3>
@@ -96,6 +97,7 @@ class ContributionCard extends Component {
         ) : null}
         <div style={{ marginBottom: "20px" }}>
           {/* <button
+
               class="comment-btn"
               type="button"
               onClick={this.addUserLike}

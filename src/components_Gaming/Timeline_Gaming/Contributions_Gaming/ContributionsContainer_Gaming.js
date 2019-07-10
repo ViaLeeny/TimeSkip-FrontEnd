@@ -11,9 +11,9 @@ class ContributionContainer_Gaming extends Component {
   render() {
     return (
       <div className="contribution-gaming">
-        <div className = "">
+        <div className = "contribution-div-gaming">
           { this.props.contributions.length > 0 
-          ? <div> <h3>Comments:</h3></div> 
+          ? <div className='comment-heading'> <h2>Comments:</h2></div> 
             : null
             }
               <p>

@@ -95,6 +95,7 @@ class EventCard extends React.Component {
 
         <div className="description">
           <p>{event.description}</p>
+
         </div>
 
         <br />
