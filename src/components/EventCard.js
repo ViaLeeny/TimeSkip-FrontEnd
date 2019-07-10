@@ -18,7 +18,7 @@ class EventCard extends React.Component {
   }
   //ROSS: on Mount, fetches ALL contributions and saves to state
   componentDidMount() {
-   this.setUsersAndContributions() 
+   this.setUsersAndContributions()
   }
 
   setContributionToEdit = contribution => {
@@ -30,7 +30,7 @@ class EventCard extends React.Component {
   fetchUsers = () => {
     return fetch(USERS_URL)
       .then(resp => resp.json())
-    
+
   };
 
   fetchContributions = () => {
@@ -38,7 +38,7 @@ class EventCard extends React.Component {
       .then(resp => resp.json())
   };
 
-  //ROSS: function that calls one fetch after (.then) the other is finished and 
+  //ROSS: function that calls one fetch after (.then) the other is finished and
   //then sets the state of both at once (prevents erros in Conttribution Container)
   setUsersAndContributions = () => {
     this.fetchUsers().then(users => {
@@ -84,8 +84,16 @@ class EventCard extends React.Component {
       <div className="eventCard">
         <br />
         <br />
+<<<<<<< HEAD
 
         <h1 className="title">{event.name}</h1>
+=======
+            <h1 className="title">{this.props.event.name}</h1>
+
+
+      <div className="card-s">
+        <h1 className="title">{this.props.event.name}</h1>
+>>>>>>> f4a2744f0f0dc0f50bd3344efca0b52636c6e59b
 
         <div className="date">
           <p>Date of Expedition: {event.date}</p>
@@ -95,10 +103,13 @@ class EventCard extends React.Component {
           <img className="picture" src={event.image_url} />
         </div>
 
-        <div className="description">
-          <p>{event.description}</p>
-
+        <div className="description-s">
+          <p>{this.props.event.description}</p>
         </div>
+
+      </div>
+
+
 
         <br />
         <button

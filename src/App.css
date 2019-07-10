@@ -60,10 +60,10 @@ label {
   padding: 30px;
 }
 
-.description { 
+.description {
   padding: 20px;
   word-spacing: 5px;
-  line-height: 20px; 
+  line-height: 20px;
 }
 
 .card {
@@ -206,9 +206,9 @@ label {
 
 
 .picture {
-  height: 450px;
+  height: 400px;
   font-style: oblique;
-  width: 600px;
+  width: 550px;
   background-color: wheat;
   align-content: center;
   border-radius: 10px;
@@ -225,30 +225,48 @@ label {
 .eventCard {
   align-content: center;
   flex-direction: column;
+  background-color: #bfeeff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px cyan;
+  margin: 0 auto;
+  width: 50%;
+
+}
+.card-s{
+  background-color: papayawhip;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 80%;
+  height: 60%;
+  padding: 20px;
+  border: black;
+  border-style: double;
 }
 
 
 .description-s {
-  background: red;
-  color: peachpuff;
-  height: 100px;
+
+  background: blue;
+  color: #fff;
+  height: 150px;
+
   font-size: 16px;
   opacity: 0.6;
   transition: 0.3s;
   border-radius: 15px;
   margin: 0 auto;
-  width: 60%;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-left: 10px
+  width: 70%;
+  font-size: 15px;
 
 
 }
 
+
 .description-s:hover {
-  background: peachpuff;
-  color: red;
+  background: white;
+  color: blue;
   opacity: 1;
+  box-shadow: 12px 8px 4px black;
 }
 
 .date {
@@ -312,7 +330,7 @@ label {
   overflow-y: scroll;
   overflow-x: scroll;
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
   flex-wrap: nowrap;
 }
 
@@ -424,84 +442,14 @@ label {
   color: grey ;
 }
 
-.eventCard{
-  background-color: #2bc7ff;
-  border-radius: 15px;
-  box-shadow: 15px 10px 5px grey;
-  margin: 0 auto;
-  width: 50%;
 
+
+.space{
+    background-image: url("http://getwallpapers.com/wallpaper/full/8/1/a/1183874-ultra-hd-space-wallpaper-2560x1440-pc.jpg");
+
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-
-.submit-g{
-  color: #36a148;
-  display: inline-block;
-  border: none;
-  border-radius: 10px;
-  padding: 1rem 2rem;
-  margin: 20px;
-  text-decoration: none;
-  background: #51c04e;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out,
-              transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.comment-btn-gaming {
-  display: inline-block;
-  border: none;
-  border-radius: 10px;
-  padding: 1rem 2rem;
-  margin: 10px;
-  text-decoration: none;
-  background: #629add;
-  color: #ffffff;
-  font-family: sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out,
-              transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-
-
-
-.comment-btn-gaming:hover{
-  background: #0053ba;
-}
-
-.comment-btn-gaming:hover{
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-.comment-btn-gaming:hover{
-  transform: scale(0.99);
-}
-
-
-
-.submit-g:hover{
-  background: #0053ba;
-}
-
-.submit-g:hover{
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-.submit-g:hover{
-  transform: scale(0.99);
-}
-
-
-
