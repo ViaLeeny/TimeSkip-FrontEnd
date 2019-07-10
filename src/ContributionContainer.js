@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContributionCard from "./ContributionCard";
-//import { Card, Icon, Image } from 'semantic-ui-react'
+import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
 class ContributionContainer extends Component {
   constructor(props) {
@@ -8,31 +8,19 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   const filteredEventContributions = () => {
-  //     console.log("here are all contributions");
-  //     console.log(this.props.contributions);
-
-  //     let eventContributions = this.props.contributions.map(
-  //       contribution => contribution.event_id === this.props.event.id
-  //     );
-  //     //debugger;
-
-  //     this.setState({ filteredContributions: eventContributions });
-  //   };
-  // }
 
   render() {
     return (
       <div className="contribution">
-        <div className="sub-div">
-          <h1>Scroll to see your comments</h1>
+        <div >
+          <h1>Comments</h1>
             <p>
                {this.props.contributions.map(cont => {
-                return  <ContributionCard contribution={cont} />;
+
+                return <ContributionCard setContributionToEdit={this.props.setContributionToEdit} contribution={cont} fetchContributions={this.props.fetchContributions} toggleShowForm={this.props.toggleForm}/>;
+
               })}
             </p>
-
         </div>
 
       </div>

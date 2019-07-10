@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import { Segment } from "semantic-ui-react";
 import uniqueId from "react-html-id";
 const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
 
-class ContributionCard extends Component {
+class ContributionCard_Gaming extends Component {
+
   constructor() {
     super();
     uniqueId.enableUniqueIds(this);
@@ -10,8 +12,6 @@ class ContributionCard extends Component {
       imageErrorCounter: 0
     };
   }
-
-
 
 
   deleteContribution = () => {
@@ -31,8 +31,7 @@ class ContributionCard extends Component {
     });
   };
 
-
-  addDefaultSrc = event => {
+  addDefaultSrc = event => { 
     event.persist();
     let defaultUrl = "http://localhost:3001/space-timeline"; //QU why default to this?
     if (
@@ -48,17 +47,11 @@ class ContributionCard extends Component {
     }
   };
 
-
-
-
-
-
-
-
   render() {
     return (
-    <div className="comment-container">
-    <h3 className="your-comment">Your Comment:</h3>
+      <div className="rowC">
+        <div className="comment-container">
+          <p> User {this.props.contribution.user_id} says:</p>
           <p className="comment" id={this.lastUniqueId()}>
             {this.props.contribution.text}
           </p>
@@ -97,9 +90,24 @@ class ContributionCard extends Component {
             </button>
           </div>
         </div>
+      </div>
+    );
+    // return (
+    //   <div>
+    //       <Segment> 
+    //     <h1>User ID {this.props.contribution.user_id} says:</h1>
 
-    )
+    //     <p className="comment">{this.props.contribution.text}</p>
+    //     <img
+    //       alt={this.props.contribution.id}
+    //       src={this.props.contribution.url}
+    //       className="picture"
+    //     />
+    //     <p> Comment Made: {this.props.contribution.created_at}</p>
+    //     </Segment>
+    //   </div>
+    // );
   }
 }
 
-export default ContributionCard;
+export default ContributionCard_Gaming;
