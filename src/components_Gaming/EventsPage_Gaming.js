@@ -1,7 +1,6 @@
 import React from 'react'
 import TimelineContainer_Gaming from '../components_Gaming/Timeline_Gaming/TimelineContainer_Gaming';
 import EventCard_Gaming from './EventCard_Gaming'
-import HomePage from '../Pages/HomePage';
 import NavBar from '../components/NavBar'
 
 
@@ -42,8 +41,6 @@ class EventsPage_Gaming extends React.Component {
     
     //THIS FUNCTION HANDLES THE CLICK ON ANY EVENT ON THE TIMELINE
     showGamingEventCard = (gamingEvent) => {
-        console.log(gamingEvent)
-      
         this.setState({
             selectedEvent: [gamingEvent]
         })
@@ -59,9 +56,10 @@ class EventsPage_Gaming extends React.Component {
             <TimelineContainer_Gaming 
                 gamingEvents={sortedGamingEvents()} 
                 showGamingEventCard={showGamingEventCard}
+                selectedEvent = {selectedEvent}
             />
             {selectedEvent.length > 0 ?
-				(<EventCard_Gaming selectedEvent={selectedEvent[0]} />) : null
+				(<EventCard_Gaming selectedEvent={selectedEvent[0]} />) : <h1 class='choose-event'>Select a year to see an event</h1>
 			}
 		</div>
             )

@@ -10,17 +10,23 @@ class ContributionContainer_Gaming extends Component {
 
   render() {
     return (
-      <div className="contribution">
-        
-       { this.props.contributions.length > 0 
-       ? <div> <h3>Contribution Container:</h3></div> 
-        : null
-        }
-            <p>
-                {this.props.contributions.map(cont => {
-                    return <ContributionCard_Gaming contribution={cont} />;
-                })}
-            </p>
+      <div className="contribution-gaming">
+        <div className = "contribution-div-gaming">
+          { this.props.contributions.length > 0 
+          ? <div className='comment-heading'> <h2>Comments:</h2></div> 
+            : null
+            }
+              <p>
+                  {this.props.contributions.map(cont => {
+                      return <ContributionCard_Gaming 
+                        contribution={cont} 
+                        setContributionToEdit={this.props.setContributionToEdit} 
+                        fetchContributions={this.props.fetchContributions} 
+                        toggleShowForm={this.props.toggleForm}
+                        />;
+                  })}
+              </p>
+        </div>
       </div>
     );
   }

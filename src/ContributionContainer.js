@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ContributionCard from "./ContributionCard";
-//import { Card, Icon, Image } from 'semantic-ui-react'
+import { Button, Comment, Form, Header } from "semantic-ui-react";
 
 class ContributionContainer extends Component {
   constructor(props) {
@@ -8,30 +8,34 @@ class ContributionContainer extends Component {
     this.state = {};
   }
 
-  // componentDidMount() {
-  //   const filteredEventContributions = () => {
-  //     console.log("here are all contributions");
-  //     console.log(this.props.contributions);
-
-  //     let eventContributions = this.props.contributions.map(
-  //       contribution => contribution.event_id === this.props.event.id
-  //     );
-  //     //debugger;
-
-  //     this.setState({ filteredContributions: eventContributions });
-  //   };
-  // }
+  getAuthor = cont => {
+    return this.props.users.find(user => {
+      debugger;
+      return user.id === cont.user_id;
+    });
+  };
 
   render() {
     return (
       <div className="contribution">
-        <h3>Contribution Container:</h3>
-
-        <p>
-          {this.props.contributions.map(cont => {
-            return <ContributionCard contribution={cont} />;
-          })}
-        </p>
+        <div>
+          <h1>Comments</h1>
+          <p>
+            {this.props.contributions.map(cont => {
+              // IS THIS THE CULPRIT? try defining it as a function outside the render?
+              return (
+                <ContributionCard
+                  setContributionToEdit={this.props.setContributionToEdit}
+                  contribution={cont}
+                  fetchContributions={this.props.fetchContributions}
+                  toggleShowForm={this.props.toggleForm}
+                  user={this.getAuthor(cont)}
+                  fetchUsers={this.props.fetchUsers}
+                />
+              );
+            })}
+          </p>
+        </div>
       </div>
     );
   }

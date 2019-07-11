@@ -6,7 +6,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 9s linear;
   height: 30vmin;
   pointer-events: none;
 }
@@ -56,7 +56,29 @@ label {
   align-items: center;
   flex-direction: column;
   display: flex;
+  /* width: 100px; */
+  padding: 30px;
 }
+
+.description {
+  padding: 20px;
+  word-spacing: 5px;
+  line-height: 20px;
+}
+
+.card {
+  height: 415px;
+}
+
+.choose-event{
+  font-size: 90px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: rgba(128, 128, 128, 0.342);
+}
+
+
 
 .event-card{
   margin: 50px 50px 50px 50px;
@@ -64,12 +86,19 @@ label {
   align-items: center;
   flex-direction: column;
   display: inline-block;
+  width: 60%
 }
 
 .ui.grid.five > .row.bot-army-row {
   flex-wrap: nowrap;
   min-height: 100%;
 }
+
+.ui.segment > .row.bot-army-row {
+  flex-wrap: nowrap;
+  min-height: 100%;
+}
+
 
 .ui.grid.five {
   padding: 0px 20px;
@@ -108,6 +137,18 @@ label {
   right: 15px;
 }
 
+.signout{
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  border-radius: 10pc;
+  cursor: pointer; /* Pointer/hand icon */
+  position: absolute; /* Float the buttons side by side */
+  right: 40px;
+  top: 20px
+}
+
 
 @keyframes App-logo-spin {
   from {
@@ -116,6 +157,12 @@ label {
   to {
     transform: rotate(360deg);
   }
+}
+
+.add-comment {
+  position: absolute;
+  left: 40%;
+  margin-bottom: 30px;
 }
 
 .button {
@@ -127,12 +174,15 @@ label {
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
 }
-/* 
-.button {
-  position: relative;
+
+
+
+.button-s {
+  position: center;
+  align-self: center;
   top: 50%;
   float: left;
-	width: 65px;
+	width: 120px;
 	height: 45px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 11px;
@@ -147,93 +197,89 @@ label {
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
   outline: none;
+  margin: 10px;
+  top: 10px ;
+  bottom: 30px
 }
 
-.button:hover {
+.button-s:hover {
 	background-color: #2EE59D;
 	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 	color: #fff;
 	transform: translateY(-7px);
 }
 
-.button:active {
+.button-s:active {
 	position: relative;
 	top: 1px;
-} */
+}
+
+
 .picture {
-  height: 450px;
+  height: 400px;
   font-style: oblique;
-  width: 600px;
+  width: 550px;
   background-color: wheat;
   align-content: center;
-  border-radius: 40px;
-  border-style: dotted;
+  border-radius: 10px;
+  margin: 50px;
 
 }
 
 .picture:hover {
-  transform: scale(0.8);
+  transform: scale(1.2);
+
 
 }
 
 .eventCard {
   align-content: center;
-}
-
-/* .description {
-  background:#1AAB8A;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:60px;
-  font-size:1em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  border-radius: 50pc;
-}
-
-.description:hover {
-  background:#fff;
-  color:#1AAB8A;
-  border-radius: 50pc;
+  flex-direction: column;
+  background-color: #bfeeff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px cyan;
+  margin: 0 auto;
+  width: 50%;
 
 }
-
-.description:before, .description:after {
-  border-radius: 50pc;
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #1AAB8A;
-  transition:400ms ease all;
-
+.card-s{
+  background-color: papayawhip;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 80%;
+  height: 60%;
+  padding: 20px;
+  border: black;
+  border-style: double;
 }
 
-.description:after{
-  border-radius: 50pc;
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
 
+.description-s {
+
+  background: blue;
+  color: #fff;
+  height: 150px;
+
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 70%;
+  font-size: 15px;
 }
-.description:hover:before,.description:hover:after{
-  border-radius: 50pc;
-  width:100%;
-  transition:800ms ease all;
 
-} */
+.description-s:hover {
+  background: white;
+  color: blue;
+  opacity: 1;
+  box-shadow: 12px 8px 4px black, 
+}
 
 
 .date {
   font-size: 20px;
-  color: white;
-
+  color: black;
 }
 
 .timelinecontainer {
@@ -241,66 +287,177 @@ label {
 }
 
 .title {
-  font-family: 'Electrolize';
-  color: white;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 400;
-  src: local('Electrolize'), local('Electrolize-Regular'), url(https://fonts.gstatic.com/s/electrolize/v7/cIf5Ma1dtE0zSiGSiED7AXEBuI9PQrfA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: Verdana, Geneva, sans-serif;
 }
+
+.submit-btn {
+  width: 100px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.contribution-text {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contribution-url {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.contribution {
+  color: white;
+  background-image: url("https://hdwallsource.com/img/2018/2/minimal-digital-art-space-wallpaper-background-64899-67102-hd-wallpapers.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  height: 500px;
+  overflow:visible;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 80%;
+  flex-wrap: nowrap;
+}
+
+.contribution-gaming {
+  color: #ffbb00;
+  background-image: url("https://kit8.net/images/thumbnails/580/386/detailed/4/gamer@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  align-content: left;
+  height: 1000px;
+  overflow:visible;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.rowC{
+  padding-top: 10px
+}
+
+.contributionPic{
+  border: none;
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+  padding:30px;
+  border-radius: 10px;
+}
+
+.comment{
+  color: black;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+  font-size: 15px;
+}
+
+.comment-btn {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+.comment-btn:hover{
+    background: #0053ba;
+}
+
+.comment-btn:hover{
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.comment-btn:hover{
+    transform: scale(0.99);
+}
+
+.comment-container{
+  width: 450px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+  box-shadow: 8px 6px 4px silver;
+  margin-bottom: 20px;
+}
+
+.comment-container:hover{
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px cyan;
+}
+
+
+.comment-container-gaming{
+  width: 450px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+  box-shadow: 8px 6px 4px silver;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.comment-container-gaming:hover{
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px cyan;
+}
+
+.comment-heading{
+  color: white ;
+}
+
+.comment-user{
+  color: grey ;
+}
+
+
 
 .space{
-  background-image: url("https://media.wired.com/photos/5b7b4f9d5560bb1fedf11c95/master/w_582,c_limit/solarsystem-865297902-%5BConverted%5D.jpg");
-  background-repeat: repeat;
+    background-image: url("http://getwallpapers.com/wallpaper/full/8/1/a/1183874-ultra-hd-space-wallpaper-2560x1440-pc.jpg");
 
-}
 
-.comment {
-  background:lightskyblue;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:60px;
-  font-size:1em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  border-radius: 50pc;
-}
-
-.comment:hover {
-  background:#fff;
-  color:lightskyblue;
-  border-radius: 50pc;
-
-}
-
-.comment:before, .comment:after {
-  border-radius: 50pc;
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: lightskyblue;
-  transition:400ms ease all;
-
-}
-
-.comment:after{
-  border-radius: 50pc;
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-
-}
-.comment:hover:before,.comment:hover:after{
-  border-radius: 50pc;
-  width:100%;
-  transition:800ms ease all;
-
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

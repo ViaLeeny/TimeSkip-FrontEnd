@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     return (
     <div className="App">
         <header className="App-header">
-        <img src='../Assets/TimeSkip_logo.png' className="App-logo" alt="logo" />
+        <img src='https://images.vexels.com/media/users/3/136991/isolated/preview/064fd00b13b1c206ff592032ffca1e0c-time-clock-icon-by-vexels.png' className="App-logo" alt="logo" />
         <h1>TimeSkip</h1>
         
         <div>

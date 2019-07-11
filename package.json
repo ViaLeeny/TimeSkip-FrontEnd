@@ -10,8 +10,11 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-uniqueid": "0.0.2",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.87.2"
+    "semantic-ui-react": "^0.87.2",
+    "styled-components": "^4.2.0",
+    "uniqueid": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-html-id": "^0.1.5"
   }
 }

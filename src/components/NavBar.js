@@ -8,6 +8,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom'
+import { Image } from 'semantic-ui-react'
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -40,7 +41,10 @@ export default function ElevateAppBar(props) {
       <ElevationScroll {...props}>
         <AppBar>
           <Toolbar>
-            <Typography variant="h6">TimeSkip</Typography>
+          <Link to='/topics' >
+          <Image class= 'App-logo' src='https://images.vexels.com/media/users/3/136991/isolated/preview/064fd00b13b1c206ff592032ffca1e0c-time-clock-icon-by-vexels.png' size='tiny' circular />
+          </Link>
+          <h1>TimeSkip</h1>
             <Link to='/topics' class="ui primary button toTopics" > Go Back To Topics </Link>
           </Toolbar>
         </AppBar>

@@ -1,16 +1,10 @@
 import React from 'react'
-
 import TimelineContainer from './Timeline/TimelineContainer.js'
 import EventCard from './EventCard'
-import HomePage from '../Pages/HomePage'
 import NavBar from './NavBar'
 
 
-
-
 const eventsURL = "http://localhost:3000/events"
-
-
 
 
 class EventsPage extends React.Component {
@@ -60,7 +54,7 @@ class EventsPage extends React.Component {
 			 <NavBar signOut={this.props.signOut}/>
 			<TimelineContainer events={this.sortedEvents()} selectionOfYear={this.selectYearOfEvent}/>
 			{selectedYear.length > 0 ?
-				(<EventCard event={selectedYear[0]} />) : console.log(selectedYear)
+				(<EventCard event={selectedYear[0]} />) : <h1 class='choose-event'>Select a year to see an event</h1>
 			}
 		</div>
 
