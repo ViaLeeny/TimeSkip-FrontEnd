@@ -10,6 +10,8 @@ import EventsPage from "./components/EventsPage";
 import EventsPage_Gaming from "./components_Gaming/EventsPage_Gaming";
 import ChooseAvatar from "./Pages/ChooseAvatar";
 import { validate } from "./Services/api";
+import uniqueId from "react-html-id";
+
 
 const topicsURL = "http://localhost:3000/topics";
 
