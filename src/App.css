@@ -245,17 +245,11 @@ label {
 
 
 .description-s {
-<<<<<<< HEAD
-  background: blue;
-  color: #fff;
-  height: 150px;
-=======
 
   background: blue;
   color: #fff;
   height: 150px;
 
->>>>>>> 664dcd11c07435f89e9b111bf5989c43a3c1b2e3
   font-size: 16px;
   opacity: 0.6;
   transition: 0.3s;
@@ -263,25 +257,15 @@ label {
   margin: 0 auto;
   width: 70%;
   font-size: 15px;
-<<<<<<< HEAD
-=======
-
->>>>>>> 664dcd11c07435f89e9b111bf5989c43a3c1b2e3
-
-
 }
 
-
 .description-s:hover {
-<<<<<<< HEAD
-=======
-
->>>>>>> 664dcd11c07435f89e9b111bf5989c43a3c1b2e3
   background: white;
   color: blue;
   opacity: 1;
-  box-shadow: 12px 8px 4px black;
+  box-shadow: 12px 8px 4px black, 
 }
+
 
 .date {
   font-size: 20px;
