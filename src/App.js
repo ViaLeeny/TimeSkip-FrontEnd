@@ -12,7 +12,7 @@ import ChooseAvatar from "./Pages/ChooseAvatar";
 import { validate } from "./Services/api";
 
 
-const topicsURL = "http://localhost:3000/topics";
+const topicsURL = `http://localhost:3000/topics`;
 
 class App extends React.Component {
   state = {
