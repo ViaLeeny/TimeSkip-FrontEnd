@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import uniqueId from "react-html-id";
-const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
-const LIKES_URL = `https://timeskip-api.herokuapp.com/likes`;
+const CONTRIBUTIONS_URL = `${process.env.REACT_APP_API_URL}/contributions/`;
+const LIKES_URL = `${process.env.REACT_APP_API_URL}/likes`;
 
 class ContributionCard extends Component {
   constructor() {

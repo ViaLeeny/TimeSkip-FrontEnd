@@ -1,4 +1,4 @@
-const baseUrl = "https://timeskip-api.herokuapp.com";
+const baseUrl = "${process.env.REACT_APP_API_URL}";
 const signinUrl = baseUrl + "/signin";
 const signUpUrl = baseUrl + "/signup";
 
@@ -21,7 +21,7 @@ export function signup(name, password) {
 }
 
 export function validate(){
-  return fetch('https://timeskip-api.herokuapp.com/validate', {
+  return fetch('${process.env.REACT_APP_API_URL}/validate', {
     headers: { 'Authorization': localStorage.token }
   }).then(resp => resp.json())
 }

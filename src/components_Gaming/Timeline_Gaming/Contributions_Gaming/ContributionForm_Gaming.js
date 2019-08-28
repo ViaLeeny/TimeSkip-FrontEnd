@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Segment} from 'semantic-ui-react'
 
-const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
+const CONTRIBUTIONS_URL = `${process.env.REACT_APP_API_URL}/contributions/`;
 
 class ContributionForm_Gaming extends Component {
   constructor(props) {

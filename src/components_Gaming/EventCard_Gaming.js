@@ -3,7 +3,7 @@ import { Segment, Header, Image, Icon } from 'semantic-ui-react'
 import ContributionContainer_Gaming from "./Timeline_Gaming/Contributions_Gaming/ContributionsContainer_Gaming"
 import ContributionForm_Gaming from './Timeline_Gaming/Contributions_Gaming/ContributionForm_Gaming'
 
-const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`
+const CONTRIBUTIONS_URL = `${process.env.REACT_APP_API_URL}/contributions/`
 
 class EventCard_Gaming extends React.Component {
   //SETTING STATE

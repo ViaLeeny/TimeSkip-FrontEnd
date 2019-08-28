@@ -3,8 +3,8 @@ import ContributionContainer from "../ContributionContainer.js";
 import ContributionForm from "./ContributionForm.js";
 import { Segment, Header, Image, Icon } from 'semantic-ui-react'
 
-const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
-const USERS_URL = `https://timeskip-api.herokuapp.com/users/`;
+const CONTRIBUTIONS_URL = `${process.env.REACT_APP_API_URL}/contributions/`;
+const USERS_URL = `${process.env.REACT_APP_API_URL}/users/`;
 
 class EventCard extends React.Component {
   constructor(props) {

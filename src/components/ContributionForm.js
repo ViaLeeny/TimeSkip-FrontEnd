@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { validate } from "../Services/api.js";
 import {signin} from "../Services/api.js"
-const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
+const CONTRIBUTIONS_URL = `${process.env.REACT_APP_API_URL}/contributions/`;
 
 class ContributionForm extends Component {
   constructor(props) {
