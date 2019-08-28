@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://timeskip-api.herokuapp.com";
 const signinUrl = baseUrl + "/signin";
 const signUpUrl = baseUrl + "/signup";
 
@@ -21,7 +21,7 @@ export function signup(name, password) {
 }
 
 export function validate(){
-  return fetch('http://localhost:3000/validate', {
+  return fetch('https://timeskip-api.herokuapp.com/validate', {
     headers: { 'Authorization': localStorage.token }
   }).then(resp => resp.json())
 }

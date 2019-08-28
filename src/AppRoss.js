@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ContributionContainer from './ContributionContainer.js'
 import './App.css';
 import { Container, Header, List } from "semantic-ui-react";
-const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
+const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
 
 // import logo from './logo.svg';
 

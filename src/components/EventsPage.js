@@ -4,7 +4,7 @@ import EventCard from './EventCard'
 import NavBar from './NavBar'
 
 
-const eventsURL = "http://localhost:3000/events"
+const eventsURL = "https://timeskip-api.herokuapp.com/events"
 
 
 class EventsPage extends React.Component {

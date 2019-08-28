@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Segment } from "semantic-ui-react";
-const CONTRIBUTIONS_URL = `http://localhost:3000/contributions/`;
+const CONTRIBUTIONS_URL = `https://timeskip-api.herokuapp.com/contributions/`;
 
 class ContributionCard_Gaming extends Component {
 
